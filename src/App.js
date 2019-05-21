@@ -12,8 +12,8 @@ function App() {
     <div>
       <BrowserRouter>
         {/* <Home/> */}
-        {/* <Login/> */}
-        <SearchPage/>
+        <Login/>
+        {/* <SearchPage/> */}
       </BrowserRouter>
     </div>
 

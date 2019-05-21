@@ -57,9 +57,9 @@ function steps(props) {
           How it works
         </Typography>
         {/* <Divider variant="fullWidth"/> */}
-        <div>
-          <Grid container spacing={40}>
-            <Grid item xs={12} md={4}>
+        <div >
+          <Grid container spacing={40} >
+            <Grid item xs={12} md={4} >
               <div className={classes.item}>
                 {/* <div className={classes.number}>1.</div> */}
                 <GoMailRead size={30} style={{padding: '20px 0px 20px 0px', color: '#fff'}}/>

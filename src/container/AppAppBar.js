@@ -12,7 +12,7 @@ const styles = theme => ({
   title: {
     fontSize: 28,
   },
-  placeholder: toolbarStyles(theme).root,
+  // placeholder: toolbarStyles(theme).root,
   toolbar: {
     justifyContent: 'space-between',
   },
@@ -42,7 +42,7 @@ function AppAppBar(props) {
 
   return (
     <div>
-      <AppBar position="fixed" style={{backgroundColor: "#5ba16f" }}>
+      <AppBar position="relative" style={{backgroundColor: "#5ba16f" }}>
         <Toolbar className={classes.toolbar}>
           <div className={classes.left} />
           <Link
@@ -73,7 +73,7 @@ function AppAppBar(props) {
           </div>
         </Toolbar>
       </AppBar>
-      <div className={classes.placeholder} />
+      {/* <div className={classes.placeholder} /> */}
       <Switch>
         {/* <Route path="/login" exact component = {Login}/> */}
         {/* <Route path="/sign-up" exact component = {B}/> */}
