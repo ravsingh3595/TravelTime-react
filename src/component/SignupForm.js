@@ -1,4 +1,5 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 import axios from 'axios';
 
 class SignupForm extends React.Component{
@@ -23,7 +24,8 @@ class SignupForm extends React.Component{
 
     onSubmit(event) {
         event.preventDefault();
-        axios.post('/api/users', {user: this.state});
+        // axios.post('/api/users', {user: this.state});
+        this.props.userSignupRequest(this.state);
     }
 
     render(){
@@ -51,7 +53,7 @@ class SignupForm extends React.Component{
                     <label className="control-label">Password</label>
                     <input 
                         value={this.state.password}
-                        type="text"
+                        type="password"
                         name="password"
                         className="form-control"
                         onChange={this.onChange}
@@ -60,7 +62,7 @@ class SignupForm extends React.Component{
                     <label className="control-label">Confirm Password</label>
                     <input 
                         value={this.state.confirmPassword}
-                        type="text"
+                        type="password"
                         name="confirmPassword"
                         className="form-control"
                         onChange={this.onChange}
@@ -75,6 +77,11 @@ class SignupForm extends React.Component{
             </form>
         );
     }
+}
+
+SignupForm.propTypes = {
+    userSignupRequest : PropTypes.func.isRequired
+        
 }
 
 export default SignupForm;
