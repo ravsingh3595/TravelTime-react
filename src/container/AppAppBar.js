@@ -5,8 +5,9 @@ import { withStyles } from '@material-ui/core/styles';
 import Link from '@material-ui/core/Link';
 import AppBar from '../component/AppBar';
 import Toolbar, { styles as toolbarStyles } from '../component/Toolbar';
-import Login from '../Pages/Login';
+import LoginPage from '../Pages/Login';
 import { Route, Switch } from 'react-router-dom';
+import SignupPage from '../Pages/SignupPage';
 
 const styles = theme => ({
   title: {
@@ -50,7 +51,7 @@ function AppAppBar(props) {
             underline="none"
             color="inherit"
             className={classes.title}
-            href="/home"
+            href="/"
           >
             {'TraveTime'}
           </Link>
@@ -67,16 +68,15 @@ function AppAppBar(props) {
               variant="h6"
               underline="none"
               className={classNames(classes.rightLink)}
-              href="/sign-up">
+              href="/signup">
               {'SIGN UP'}
             </Link>
           </div>
         </Toolbar>
       </AppBar>
-      {/* <div className={classes.placeholder} /> */}
       <Switch>
-        {/* <Route path="/login" exact component = {Login}/> */}
-        {/* <Route path="/sign-up" exact component = {B}/> */}
+        <Route path="/login" exact component = {LoginPage}/> 
+        <Route path="/signup" exact component = {SignupPage}/> 
       </Switch>
     </div>
     
