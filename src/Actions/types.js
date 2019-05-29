@@ -1,0 +1,1 @@
+export const ADD_ALERT_MESSAGE = 'ADD_FLASH_MESSAGE';

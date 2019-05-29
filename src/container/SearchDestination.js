@@ -29,7 +29,7 @@ class SearchDestination extends Component {
               fontSize: '280%',
               padding: "10px", 
               textAlign: 'center'}}>
-            <bold>Travelling</bold> Made Easy
+             Travelling Made Easy
           </h1>
         <form>
           <input
