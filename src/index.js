@@ -8,11 +8,15 @@ import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
 
+import rootReducer from './rootReducer';
 import routes from './Routes/Route';
 
 const store = createStore(
-    (state = {}) => state,
-      applyMiddleware(thunk)
+    rootReducer,
+    compose(
+      applyMiddleware(thunk),
+      window.devToolsExtension ? window.devToolsExtension() : f => f
+    )
   );
 
 ReactDOM.render(
@@ -24,29 +28,3 @@ ReactDOM.render(
 // unregister() to register() below. Note this comes with some pitfalls.
 // Learn more about service workers: https://bit.ly/CRA-PWA
 serviceWorker.unregister();
-
-
-// import { render } from 'react-dom';
-// import rootReducer from './rootReducer';
-// import setAuthorizationToken from './utils/setAuthorizationToken';
-// import jwtDecode from 'jwt-decode';
-// import { setCurrentUser } from './actions/authActions';
-
-
-// const store = createStore(
-//   rootReducer,
-//   compose(
-//     applyMiddleware(thunk),
-//     window.devToolsExtension ? window.devToolsExtension() : f => f
-//   )
-// );
-
-// if (localStorage.jwtToken) {
-//   setAuthorizationToken(localStorage.jwtToken);
-//   store.dispatch(setCurrentUser(jwtDecode(localStorage.jwtToken)));
-// }
-
-// render(
-//   <Provider store={store}>
-//     <Router history={browserHistory} routes={routes} />
-//   </Provider>, document.getElementById('app'));

@@ -16,9 +16,9 @@ import SearchPage from '../Pages/SearchPage';
 // import requireAuth from './utils/requireAuth';
 
 export default (
-    <Route path="/" component={App}>
-        <Route path="signup" component={SignupPage} />
-        <Route path="login" component={LoginPage} />
-        <Route path="search" component={SearchPage} />
+  <Route path="/" component={App}>
+    <Route path="signup" component={SignupPage} />
+    <Route path="login" component={LoginPage} />
+    <Route path="search" component={SearchPage} />
   </Route>
 )

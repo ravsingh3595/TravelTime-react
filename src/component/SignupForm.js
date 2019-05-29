@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
-import axios from 'axios';
+import classnames from 'classnames';
+import validateInput from '../Actions/Validations/Signup';
 
 class SignupForm extends React.Component{
     constructor(props){
@@ -9,30 +10,44 @@ class SignupForm extends React.Component{
             username:'',
             email:'',
             password:'',
-            confirmPassword:''
+            confirmPassword:'', 
+            errors: {},
+            isLoading: false,
 
         }
         this.onChange = this.onChange.bind(this);
         this.onSubmit = this.onSubmit.bind(this);
     }
 
-    
-
     onChange(event) {
         this.setState({ [event.target.name]: event.target.value });
     }
 
+    isValid(){
+        const {errors, isValid} = validateInput(this.state)
+        if(!isValid){
+            this.setState({errors})
+        }
+        return isValid;
+    }
+
     onSubmit(event) {
         event.preventDefault();
-        // axios.post('/api/users', {user: this.state});
-        this.props.userSignupRequest(this.state);
+        if (this.isValid()){
+            this.setState({errors: {}, isLoading: false});
+            this.props.userSignupRequest(this.state).then(
+                ()=> {},
+                ({data})=> { this.setState({ errors: data , isLoading: false})}
+            );
+        }
     }
 
     render(){
+        const {errors} = this.state;
         return(
             <form onSubmit={this.onSubmit}>
                 <h1>Sign up here!</h1>
-                <div className="form-group">
+                <div className={classnames("form-group", {"has-error": errors.username})}>
                     <label className="control-label">UserName</label>
                     <input 
                         value={this.state.username}
@@ -41,7 +56,9 @@ class SignupForm extends React.Component{
                         className="form-control"
                         onChange={this.onChange}
                     />
-
+                    {errors.username && <span className="help-block">{errors.username}</span>}
+                    </div>
+                    <div className="form-group">
                     <label className="control-label">Email</label>
                     <input 
                         value={this.state.email}
@@ -50,6 +67,8 @@ class SignupForm extends React.Component{
                         className="form-control"
                         onChange={this.onChange}
                     />
+                    </div>
+                    <div className="form-group">
                     <label className="control-label">Password</label>
                     <input 
                         value={this.state.password}
@@ -58,7 +77,8 @@ class SignupForm extends React.Component{
                         className="form-control"
                         onChange={this.onChange}
                     />
-
+                    </div>
+                    <div className="form-group">
                     <label className="control-label">Confirm Password</label>
                     <input 
                         value={this.state.confirmPassword}
@@ -68,7 +88,7 @@ class SignupForm extends React.Component{
                         onChange={this.onChange}
                     />
                     <div className="form-group">
-                        <button className="btn btn-primary btn-log">
+                        <button disabled={this.state.isLoading} className="btn btn-primary btn-log">
                             Sign up
                         </button>
                     </div>

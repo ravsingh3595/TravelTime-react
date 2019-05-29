@@ -87,8 +87,16 @@ const styles = theme => ({
   },
 });
 
+
+
 function ProductCategories(props) {
   const { classes } = props;
+
+  function onClick(event){
+    event.preventDefault();
+    console.log('Button was clicked.');
+  }
+
   return (
     <LayoutBody className={classes.root} component="section" width="xlarge" >
       <Typography variant="h2" align="center" component="h6" style={{color: "#5ba16f"}}>
@@ -106,6 +114,7 @@ function ProductCategories(props) {
             style={{
               width: image.width,
             }}
+            // onClick={this.onClick}
           >
             <div
               className={classes.imageSrc}

@@ -20,9 +20,7 @@ const values = () =>{
             </li>
             <li>
                 <div className="card">
-                    <icon>
                         <IoIosMedkit size={40} className="icon"/>
-                    </icon>
                     <div className="card-content">
                         <h3>
                             Safety First
@@ -35,9 +33,7 @@ const values = () =>{
             </li>
             <li>
                 <div className="card">
-                    <icon>
                         <IoIosStats size={40} className="icon"/>
-                    </icon>
                     <div className="card-content">
                         <h3>
                             Easy on pocket

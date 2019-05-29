@@ -62,27 +62,27 @@ const data =
   },
   {
     url: Image,
-    title: 'Toronto',
+    title: 'Toronto1',
     width: '30%',
   },
   {
     url: Image,
-    title: 'Toronto',
+    title: 'Toronto2',
     width: '30%',
   },
   {
     url: Image,
-    title: 'Toronto',
+    title: 'Toronto3',
     width: '30%',
   },
   {
     url: Image,
-    title: 'Toronto',
+    title: 'Toronto4',
     width: '30%',
   },
   {
     url: Image,
-    title: 'Toronto',
+    title: 'Toronto5',
     width: '30%',
   },
 ];
