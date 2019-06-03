@@ -47,7 +47,7 @@ class SignupForm extends React.Component{
         return(
             <form onSubmit={this.onSubmit}>
                 <h1>Sign up here!</h1>
-                <div className={classnames("form-group", {"has-error": errors.username})}>
+                <div className={classnames("form-group", (errors.username  ? "has-error" :""))}>
                     <label className="control-label">UserName</label>
                     <input 
                         value={this.state.username}

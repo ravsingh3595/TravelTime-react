@@ -11,14 +11,15 @@ import './App.css';
 
 function App() {
   return (
-    <Itinerary/>
+    <div></div>
+    // <Itinerary/>
       // <BrowserRouter>
       //   <Switch>
       //     <Route path="/" component={Home}/>
-      //     <Route path="/signup" component={SignupPage} />
       //     <Route path="/login" component={LoginPage} />
       //     <Route path="/search" component={SearchPage} />
-      //   {/* <Home/> */}
+      //   {/* <Home/> */}/signup" component={SignupPage} />
+      //     <Route path="
       //   {/* <Login/> */}
       //   {/* <SignupPage/> */}
       //   {/* <SearchPage/> */}
