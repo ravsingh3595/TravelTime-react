@@ -13,7 +13,6 @@ const styles = theme => ({
   title: {
     fontSize: 28,
   },
-  // placeholder: toolbarStyles(theme).root,
   toolbar: {
     justifyContent: 'space-between',
   },
@@ -62,7 +61,7 @@ function AppAppBar(props) {
               underline="none"
               className={classes.rightLink}
               href="/login">
-              {'SIGN IN'}
+              {'LOGIN'}
             </Link>
             <Link
               variant="h6"

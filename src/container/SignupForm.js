@@ -1,0 +1,123 @@
+import React from 'react';
+import Image from '../assest/travel-world.jpg';
+import { withStyles } from '@material-ui/core/styles';
+import TextFieldComponent from '../component/TextFieldComponent';
+import Typography from '../component/Typography';
+import Button from '../component/Button';
+import PropTypes from 'prop-types';
+import validateInput from '../Actions/Validations/Signup';
+import AppBar from '../container/AppAppBar.js';
+
+const styles = theme => ({
+    main:{
+        display: 'flex',
+        justifyContent : 'center',
+        textAlignVertical: 'center',
+        height: '100%',
+    },
+    container: {
+        width: 500,
+        marginTop: 50,
+        marginBottom: 50,
+        display: 'flex',
+        flexWrap: 'wrap',
+        flexDirection: 'column',
+        justifyContent : 'center',
+        alignItems:  'center',
+        background: 'rgb(115, 197, 139)',
+        borderRadius: '25px',
+        padding: "70px 0px 50px 0px",
+        
+    },
+    heading: {
+        color: "#fff", 
+        marginTop: "30px",
+        paddingBottom: 40,
+        fontWeight: 'bold',
+    },
+    button: {
+        minWidth: 50,
+        width: 150,
+        borderRadius: "5px",
+        margin: '40px 0 0 0',
+      },
+    helpBlock: {
+
+    },
+});
+  
+class SignupForm extends React.Component {
+    constructor(props){
+        super(props);
+        this.state = {
+            username:'',
+            email:'',
+            password:'',
+            confirmPassword:'', 
+            errors: {},
+            isLoading: false,
+
+        }
+        this.onChange = this.onChange.bind(this);
+        this.onSubmit = this.onSubmit.bind(this);
+    }
+
+    onChange(event) {
+        this.setState({ [event.target.name]: event.target.value });
+    }
+
+    isValid(){
+        const {errors, isValid} = validateInput(this.state)
+        if(!isValid){
+            this.setState({errors})
+        }
+        return isValid;
+    }
+
+    onSubmit(event) {
+        event.preventDefault();
+        if (this.isValid()){
+            this.setState({errors: {}, isLoading: false});
+            this.props.userSignupRequest(this.state).then(
+                ()=> {},
+                ({data})=> { this.setState({ errors: data , isLoading: false})}
+            );
+        }
+    }
+    render() {
+        const { classes } = this.props;
+        const {errors} = this.state;
+    
+        return (
+            <div style={{backgroundImage: "url(" +  Image  + ")", backgroundRepeat: 'repeat', backgroundSize: '1024px 768px'}}>
+                <AppBar/>
+                <div className={classes.main}>
+                    <form className={classes.container} autoComplete="off">
+                        <Typography variant="h3" align="center" component="h6" className={classes.heading}>
+                            Sign up
+                        </Typography>
+                        <TextFieldComponent id="username" name="username" label="UserName" type="text" autoComplete="username" onChange={this.onChange}/>
+                        {errors.username && <span className="helpBlock">{errors.username}</span>}
+                        <TextFieldComponent id="email" name="email" label="Email Address" type="email" autoComplete="email" onChange={this.onChange}/>
+                        {errors.email && <span className="helpBlock">{errors.email}</span>}
+                        <TextFieldComponent id="password" name="password" label="Password" type="password" autoComplete="new-password" onChange={this.onChange}/>
+                        {errors.password && <span className="helpBlock">{errors.password}</span>}
+                        <TextFieldComponent id="ConfirmPassword" name="confirmPassword" label="Confirm Password" type="password" autoComplete="new-password" onChange={this.onChange}/>
+                        {errors.passwordConfirmation && <span className="helpBlock">{errors.passwordConfirmation}</span>}
+                        <Button
+                            variant="outlined" size="small" disabled={this.state.isLoading} className={classes.button} onClick={this.onSubmit}
+                        >
+                            Sign up
+                        </Button>
+                    </form>
+                </div>  
+            </div>
+        )
+    }
+}
+
+SignupForm.propTypes = {
+    userSignupRequest : PropTypes.func.isRequired
+        
+}
+export default withStyles(styles)(SignupForm);

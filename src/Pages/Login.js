@@ -5,6 +5,8 @@ import TextField from '@material-ui/core/TextField';
 import Typography from '../component/Typography';
 import Button from '../component/Button';
 import Image from '../assest/travel-world.jpg';
+import validateInput from '../Actions/Validations/Login';
+import AppBar from '../container/AppAppBar.js';
 
 const styles = theme => ({
     main:{
@@ -16,8 +18,8 @@ const styles = theme => ({
     container: {
         width: 500,
         height: 500,
-        marginTop: 150,
-        marginBottom: 150,
+        marginTop: 100,
+        marginBottom: 100,
         display: 'flex',
         flexWrap: 'wrap',
         flexDirection: 'column',
@@ -35,7 +37,6 @@ const styles = theme => ({
     heading: {
         color: "#fff", 
         marginTop: "20px",
-        // marginBottom: "0px",
         fontWeight: 'bold',
     },
     root: {
@@ -66,17 +67,49 @@ const styles = theme => ({
       },
 });
 
-  
 class Login extends React.Component {
-    state = {
-      email:  null,
-      password: null
-    };
+    constructor(props){
+        super(props);
+        this.state = {
+            email:'',
+            password:'',
+            errors: {},
+            isLoading: false,
+        }
+        this.onChange = this.onChange.bind(this);
+        this.onSubmit = this.onSubmit.bind(this);
+    }
+
+    onChange(event) {
+        console.log(event.target.value)
+        this.setState({ [event.target.name]: event.target.value });
+    }
+
+    isValid(){
+        const {errors, isValid} = validateInput(this.state)
+        if(!isValid){
+            this.setState({errors})
+        }
+        return isValid;
+    }
+
+    onSubmit(event) {
+        event.preventDefault();
+        if (this.isValid()){
+            this.setState({errors: {}, isLoading: false});
+            // this.props.userSignupRequest(this.state).then(
+            //     ()=> {},
+            //     ({data})=> { this.setState({ errors: data , isLoading: false})}
+            // );
+        }
+    }
+  
     render() {
         const { classes } = this.props;
-    
+        const {errors} = this.state;
         return (
             <div style={{backgroundImage: "url(" +  Image  + ")", backgroundRepeat: 'repeat', backgroundSize: '1024px 768px'}}>
+                <AppBar/>
                 <div className={classes.main}>
                     <form className={classes.container} noValidate autoComplete="off">
                         <Typography variant="h3" align="center" component="h6" className={classes.heading}>
@@ -84,7 +117,7 @@ class Login extends React.Component {
                         </Typography>
                         <Typography variant="body2" align="center" style={{color: "#fff", marginBottom:'20px'}}>
                             {'Not a member yet? '}
-                            <Link href="/sign-up" align="center" underline="always" >
+                            <Link href="/signup" align="center" underline="always" >
                                 Sign Up here
                             </Link>
                             </Typography>
@@ -110,8 +143,9 @@ class Login extends React.Component {
                             autoComplete="email"
                             margin="normal"
                             variant="outlined"
+                            onChange={this.onChange}
                         />
-                
+                        {errors.email && <span className="helpBlock">{errors.email}</span>}
                         <TextField
                             InputLabelProps={{
                                 classes: {
@@ -133,15 +167,18 @@ class Login extends React.Component {
                             autoComplete="current-password"
                             margin="normal"
                             variant="outlined"
+                            onChange={this.onChange}
                         />
+                        {errors.password && <span className="helpBlock">{errors.password}</span>}
                         <Button
                             color='#fff'
                             variant="outlined"
                             size="small"
                             className={classes.button}
-                            component={linkProps => (
-                            <Link {...linkProps} href="/home" variant="button" />
-                            )}
+                            onClick={this.onSubmit}
+                            // component={linkProps => (
+                            // <Link {...linkProps} href="/home" variant="button" />
+                            // )}
                         >
                             Login
                         </Button>
