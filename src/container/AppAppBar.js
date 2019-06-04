@@ -53,7 +53,7 @@ function AppAppBar(props) {
             className={classes.title}
             href="/"
           >
-            {'TraveTime'}
+            {'TravelTime'}
           </Link>
           <div className={classes.right}>
             <Link
@@ -74,10 +74,6 @@ function AppAppBar(props) {
           </div>
         </Toolbar>
       </AppBar>
-      <Switch>
-        <Route path="/login" exact component = {LoginPage}/> 
-        <Route path="/signup" exact component = {SignupPage}/> 
-      </Switch>
     </div>
     
   );

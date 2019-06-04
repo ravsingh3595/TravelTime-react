@@ -9,7 +9,7 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 
 import rootReducer from './rootReducer';
-import routes from './Routes/Route';
+import {Router} from './Routes/Route';
 
 const store = createStore(
     rootReducer,
@@ -21,7 +21,7 @@ const store = createStore(
 
 ReactDOM.render(
   <Provider store={store}>
-    <App/>
+    <Router/>
   </Provider>, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change
