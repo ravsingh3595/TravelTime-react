@@ -97,10 +97,6 @@ class Login extends React.Component {
         event.preventDefault();
         if (this.isValid()){
             this.setState({errors: {}, isLoading: false});
-            // this.props.userSignupRequest(this.state).then(
-            //     ()=> {},
-            //     ({data})=> { this.setState({ errors: data , isLoading: false})}
-            // );
         }
     }
   
@@ -171,7 +167,6 @@ class Login extends React.Component {
                         />
                         {errors.password && <span className="helpBlock">{errors.password}</span>}
                         <Button
-                            color='#fff'
                             variant="outlined"
                             size="small"
                             className={classes.button}

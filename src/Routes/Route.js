@@ -13,12 +13,14 @@ import PhotoGallery from "../Pages/PhotoGallery";
 export const  Router = () => {
   return( 
   <BrowserRouter>
-    <Route exact={true} path="/" component={Home}/>
-    <Route path="/signup" component={SignupPage} />
-    <Route path="/login" component={LoginPage} />
-    <Route path="/itinerary" component={Itinerary} />
-    <Route path = "/profile" component = {Profile} />
-    <Route path = "/gallery" component = {PhotoGallery} />
+    <div>
+      <Route exact={true} path="/" component={Home}/>
+      <Route path="/signup" component={SignupPage} />
+      <Route path="/login" component={LoginPage} />
+      <Route path="/itinerary" component={Itinerary} />
+      <Route path = "/profile" component = {Profile} />
+      <Route path = "/gallery" component = {PhotoGallery} />
+    </div>
   </BrowserRouter>
   )
 }

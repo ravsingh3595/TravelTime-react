@@ -53,11 +53,11 @@ function TextFieldComponent(props){
             id={id}
             name={name}
             label={label}
-            className={classes.textField}
             type={type}
             autoComplete={autoComplete}
             margin="normal"
             variant="outlined"
+            className={classes.textField}
             onChange={onChange}
         />
 
