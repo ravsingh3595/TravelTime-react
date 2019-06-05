@@ -7,6 +7,7 @@ import Button from '../component/Button';
 import PropTypes from 'prop-types';
 import validateInput from '../Actions/Validations/Signup';
 import AppBar from '../container/AppAppBar.js';
+// import { withRouter } from 'react-router-dom';
 
 const styles = theme => ({
     main:{
@@ -63,6 +64,7 @@ class SignupForm extends React.Component {
     }
 
     onChange(event) {
+        console.log("heloo I'm in onchange")
         this.setState({ [event.target.name]: event.target.value });
     }
 
@@ -76,12 +78,27 @@ class SignupForm extends React.Component {
 
     onSubmit(event) {
         event.preventDefault();
-        if (this.isValid()){
+        console.log("heloo I'm in onsubmit")
+        if (true){
             this.setState({errors: {}, isLoading: false});
-            this.props.userSignupRequest(this.state).then(
-                ()=> {},
-                ({data})=> { this.setState({ errors: data , isLoading: false})}
-            );
+            this.props.userSignupRequest(this.state)
+                .then(
+                    ()=> {
+                        console.log("heloo I'm signed up")
+                        this.props.addAlertMessage({
+                            type: 'success',
+                            text: 'You signed up successfully, Welcome!'
+                        })
+                        // <Redirect push to="/" />
+                        // this.context.router.history.push('/');
+                        this.props.history.push('/');
+                    },
+                    ({data})=> { 
+                        console.log("heloo I'm not signed up")
+                        this.setState({ errors: data , isLoading: false})
+                    }
+                )
+                .catch(error => console.log(error));
         }
     }
     render() {
@@ -117,7 +134,11 @@ class SignupForm extends React.Component {
 }
 
 SignupForm.propTypes = {
-    userSignupRequest : PropTypes.func.isRequired
-        
+    userSignupRequest : PropTypes.func.isRequired,
+    addAlertMessage:  PropTypes.func.isRequired
 }
+// SignupForm.contextType = {
+//     router: PropTypes.object.isRequired
+// }
 export default withStyles(styles)(SignupForm);
+// withRouter(SignUpForm)
