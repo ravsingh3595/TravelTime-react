@@ -61,30 +61,28 @@ function steps(props) {
           <Grid container spacing={40} >
             <Grid item xs={12} md={4} >
               <div className={classes.item}>
-                {/* <div className={classes.number}>1.</div> */}
                 <GoMailRead size={30} style={{padding: '20px 0px 20px 0px', color: '#fff'}}/>
-                <Typography variant="h5" align="center" style={{padding: '20px', color: '#fff'}}>
-                  Appointment every Wednesday 9am.
-                  {'New offers every week. New experiences,  new surprises and oppourtunies.'}
+                <Typography variant="h6" align="center" style={{padding: '20px', color: '#fff'}}>
+                  Appointment every Wednesday.
+                  {'New offers every week and oppourtunies.'}
                 </Typography>
               </div>
             </Grid>
             <Grid item xs={12} md={4}>
               <div className={classes.item}>
-                {/* <div className={classes.number}>2.</div> */}
                 <GoTag size={30} style={{padding: '20px 0px 20px 0px', color: '#fff'}}/>
-                <Typography variant="h5" align="center" style={{padding: '20px', color: '#fff'}}>
-                  First come, first served. Our offers are in limited quantities.
+                <Typography variant="h6" align="center" style={{padding: '20px', color: '#fff'}}>
+                  First come.'
+                  ' Our offers are in limited quantities.
                   {'Our offers are in limited quantities,'}
                 </Typography>
               </div>
             </Grid>
             <Grid item xs={12} md={4}>
               <div className={classes.item}>
-                {/* <div className={classes.number}>3.</div> */}
                 <GoMegaphone size={30} style={{padding: '20px 0px 20px 0px', color: '#fff'}}/>
-                <Typography variant="h5" align="center" style={{padding: '20px', color: '#fff'}}>
-                  {'New offers every week. New experiences, new surprises. '}
+                <Typography variant="h6" align="center" style={{padding: '20px', color: '#fff'}}>
+                  {'New offers every week. New experiences'}
                   {'Your Sundays will no longer be alike.'}
                 </Typography>
               </div>

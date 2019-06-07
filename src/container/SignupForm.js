@@ -79,7 +79,7 @@ class SignupForm extends React.Component {
     onSubmit(event) {
         event.preventDefault();
         console.log("heloo I'm in onsubmit")
-        if (true){
+        if (this.isValid()){
             this.setState({errors: {}, isLoading: false});
             this.props.userSignupRequest(this.state)
                 .then(
@@ -93,7 +93,7 @@ class SignupForm extends React.Component {
                         // this.context.router.history.push('/');
                         this.props.history.push('/');
                     },
-                    ({data})=> { 
+                    ({data})=> {
                         console.log("heloo I'm not signed up")
                         this.setState({ errors: data , isLoading: false})
                     }
