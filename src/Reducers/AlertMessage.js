@@ -14,13 +14,14 @@ export default (state = [], action = {}) => {
                 }
             ];
         case (DELETE_ALERT_MESSAGE):
-            const index = findIndex(state,{id: action.id});
+            const index = findIndex(state, {id: action.id});
             if (index >= 0){
                 return[
                     ...state.slice(0,index),
                     ...state.slice(index + 1)
                 ];
             }
+            console.log(state);
             return state;
         default: return state;
     }

@@ -1,31 +1,56 @@
 import React from 'react';
-// import Home from './Pages/Home';
-// import LoginPage from './Pages/Login';
-// import SignupPage from './Pages/SignupPage'
-// import SearchPage from './Pages/SearchPage';
-// import Itinerary from './Pages/Itinerary';
-// import {BrowserRouter, Route, Switch} from 'react-router-dom';
-
-import './App.css';
+import PropTypes from 'prop-types';
+import Home from './Pages/Home';
+import LoginPage from './Pages/Login';
+import fire from './Firebase/Firebase';
 
 
-function App() {
-  return (
-    <div></div>
-    // <Itinerary/>
-      // <BrowserRouter>
-      //   <Switch>
-      //     <Route path="/" component={Home}/>
-      //     <Route path="/login" component={LoginPage} />
-      //     <Route path="/search" component={SearchPage} />
-      //   {/* <Home/> */}/signup" component={SignupPage} />
-      //     <Route path="
-      //   {/* <Login/> */}
-      //   {/* <SignupPage/> */}
-      //   {/* <SearchPage/> */}
-      //   </Switch>
-      // </BrowserRouter>
-  );
+class App extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      email: "",
+      isUserLoggedIn: false
+    };
+    this.authListener = this.authListener.bind(this);
+  }
+
+  componentDidMount() {
+    this.authListener();
+  }
+
+  authListener() {
+    fire.auth().onAuthStateChanged((user) => {
+      console.log(user);
+      if (user) {
+        this.setState({ email: user.email, isUserLoggedIn: true });
+        console.log(this.state.email)
+        // localStorage.setItem('user', user.uid);
+      } else {
+        this.setState({ email: null });
+        console.log(this.state.email)
+        // localStorage.removeItem('user');
+      }
+    });
+  }
+
+  render(){
+    console.log(this.state.isUserLoggedIn);
+    const {isUserLoggedIn} = this.state;
+    return(
+     
+      <React.Fragment>
+        {this.state.email ? ( <Home isUserLoggedIn={isUserLoggedIn}/> ) : (<LoginPage history={this.props.history}  />)}
+      </React.Fragment>
+      
+    )
+  }
+}
+
+App.propTypes = {
+  
+  history: PropTypes.object.isRequired
 }
 
 export default App;
