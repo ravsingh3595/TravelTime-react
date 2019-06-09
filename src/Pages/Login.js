@@ -7,6 +7,7 @@ import Button from '../component/Button';
 import Image from '../assest/travel-world.jpg';
 import validateInput from '../Actions/Validations/Login';
 import AppBar from '../container/AppAppBar.js';
+import fire from '../Firebase/Firebase';
 
 const styles = theme => ({
     main:{
@@ -81,24 +82,45 @@ class Login extends React.Component {
     }
 
     onChange(event) {
-        console.log(event.target.value)
+        console.log(event.target.value);
         this.setState({ [event.target.name]: event.target.value });
     }
 
-    isValid(){
-        const {errors, isValid} = validateInput(this.state)
-        if(!isValid){
-            this.setState({errors})
-        }
-        return isValid;
-    }
+    // isValid(){
+    //     const {errors, isValid} = validateInput(this.state)
+    //     if(!isValid){
+    //         // this.setState({errors})
+    //     }
+    //     return isValid;
+    // }
 
-    onSubmit(event) {
-        event.preventDefault();
-        if (this.isValid()){
-            this.setState({errors: {}, isLoading: false});
-        }
-    }
+    onSubmit(e){
+        e.preventDefault();
+        fire.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
+        .then((u)=>{
+
+            this.props.history.push('/');
+        }).catch((error) => {
+            console.log(error);
+          });
+      }
+    
+    // onSubmit(event) {
+    //     event.preventDefault();
+    //     if (true){
+    //         this.setState({errors: {}, isLoading: false});
+    //         fire.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
+    //         .then((u)=>{
+    //             console.log(u);
+    //             this.props.history.push('/');
+    //         })
+    //         .catch((error) => {
+    //             this.setState({errors: error})
+    //             console.log(this.state.password);
+    //             console.log(error, this.state.password);
+    //           });
+    //     }
+    // }
   
     render() {
         const { classes } = this.props;
@@ -117,6 +139,7 @@ class Login extends React.Component {
                                 Sign Up here
                             </Link>
                             </Typography>
+                            {errors.code  && <span className="helpBlock">{errors.message}</span>}
                         <TextField
                             InputLabelProps={{
                                 classes: {
@@ -141,7 +164,7 @@ class Login extends React.Component {
                             variant="outlined"
                             onChange={this.onChange}
                         />
-                        {errors.email && <span className="helpBlock">{errors.email}</span>}
+                        
                         <TextField
                             InputLabelProps={{
                                 classes: {
@@ -158,6 +181,7 @@ class Login extends React.Component {
                             }}
                             id="outlined-password-input"
                             label="Password"
+                            name="password"
                             className={classes.textField}
                             type="password"
                             autoComplete="current-password"

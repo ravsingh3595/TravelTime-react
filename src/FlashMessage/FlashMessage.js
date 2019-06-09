@@ -19,7 +19,7 @@ class FlashMessage extends React.Component{
                 'alert-success': type === 'success',
                 'alert-danger': type === 'error'
             })}>
-                <button onClick="this.onClick" className="close"><span>&times;</span></button>
+                <button onClick={this.onClick} className="close"><span>&times;</span></button>
                 {text}
             </div>
         );
@@ -27,7 +27,7 @@ class FlashMessage extends React.Component{
 }
 
 FlashMessage.prototypes = {
-    messages: PropTypes.array.isRequired,
+    message: PropTypes.array.isRequired,
     deleteAlertMessage: PropTypes.func.isRequired
 }
 

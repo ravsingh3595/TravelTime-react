@@ -7,6 +7,7 @@ import Button from '../component/Button';
 import PropTypes from 'prop-types';
 import validateInput from '../Actions/Validations/Signup';
 import AppBar from '../container/AppAppBar.js';
+import fire from '../Firebase/Firebase';
 // import { withRouter } from 'react-router-dom';
 
 const styles = theme => ({
@@ -63,6 +64,16 @@ class SignupForm extends React.Component {
         this.onSubmit = this.onSubmit.bind(this);
     }
 
+
+// componentDidMount() {
+//     const rootRef = firebase.database().ref().child('signup');
+//     const speedRef = rootRef.child('email');
+//     speedRef.on('value', snap => {
+//         console.log(snap.val());
+//     })
+// }
+
+
     onChange(event) {
         console.log("heloo I'm in onchange")
         this.setState({ [event.target.name]: event.target.value });
@@ -71,7 +82,7 @@ class SignupForm extends React.Component {
     isValid(){
         const {errors, isValid} = validateInput(this.state)
         if(!isValid){
-            this.setState({errors})
+            // this.setState({errors})
         }
         return isValid;
     }
@@ -79,26 +90,38 @@ class SignupForm extends React.Component {
     onSubmit(event) {
         event.preventDefault();
         console.log("heloo I'm in onsubmit")
-        if (this.isValid()){
+        if (true){
             this.setState({errors: {}, isLoading: false});
-            this.props.userSignupRequest(this.state)
-                .then(
-                    ()=> {
-                        console.log("heloo I'm signed up")
-                        this.props.addAlertMessage({
-                            type: 'success',
-                            text: 'You signed up successfully, Welcome!'
-                        })
-                        // <Redirect push to="/" />
-                        // this.context.router.history.push('/');
-                        this.props.history.push('/');
-                    },
-                    ({data})=> {
-                        console.log("heloo I'm not signed up")
-                        this.setState({ errors: data , isLoading: false})
-                    }
-                )
-                .catch(error => console.log(error));
+            fire.auth().createUserWithEmailAndPassword(this.state.email, this.state.password)
+            .then((u)=>{
+                this.props.addAlertMessage({
+                    type: 'success',
+                    text: 'You signed up successfully, Welcome!'
+                })
+                this.props.history.push('/');
+            })
+            .catch((errorFromSignup) => {
+                this.setState({errors: errorFromSignup })
+                console.log(errorFromSignup);
+              })
+            // this.props.userSignupRequest(this.state)
+            //     .then(
+            //         ()=> {
+            //             console.log("heloo I'm signed up")
+            //             this.props.addAlertMessage({
+            //                 type: 'success',
+            //                 text: 'You signed up successfully, Welcome!'
+            //             })
+            //             // <Redirect push to="/" />
+            //             // this.context.router.history.push('/');
+            //             this.props.history.push('/');
+            //         },
+            //         ({data})=> {
+            //             console.log("heloo I'm not signed up")
+            //             this.setState({ errors: data , isLoading: false})
+            //         }
+            //     )
+            //     .catch(error => console.log(error));
         }
     }
     render() {
@@ -113,14 +136,15 @@ class SignupForm extends React.Component {
                         <Typography variant="h3" align="center" component="h6" className={classes.heading}>
                             Sign up
                         </Typography>
-                        <TextFieldComponent id="username" name="username" label="UserName" type="text" autoComplete="username" onChange={this.onChange}/>
-                        {errors.username && <span className="helpBlock">{errors.username}</span>}
+                        {/* <TextFieldComponent id="username" name="username" label="UserName" type="text" autoComplete="username" onChange={this.onChange}/> */}
+                        {/* {errors.username && <span className="helpBlock">{errors.username}</span>} */}
                         <TextFieldComponent id="email" name="email" label="Email Address" type="email" autoComplete="email" onChange={this.onChange}/>
-                        {errors.email && <span className="helpBlock">{errors.email}</span>}
+                        {(errors.code === "auth/email-already-in-user")  && <span className="helpBlock">{errors.message}</span>}
+                        {(errors.code === "auth/invalid-email")  && <span className="helpBlock">{errors.message}</span>}
                         <TextFieldComponent id="password" name="password" label="Password" type="password" autoComplete="new-password" onChange={this.onChange}/>
-                        {errors.password && <span className="helpBlock">{errors.password}</span>}
+                        {errors.code === "auth/weak-password" && <span className="helpBlock">{errors.message}</span>}
                         <TextFieldComponent id="ConfirmPassword" name="confirmPassword" label="Confirm Password" type="password" autoComplete="new-password" onChange={this.onChange}/>
-                        {errors.passwordConfirmation && <span className="helpBlock">{errors.passwordConfirmation}</span>}
+                        {/* {errors.passwordConfirmation && <span className="helpBlock">{errors.passwordConfirmation}</span>} */}
                         <Button
                             variant="outlined" size="small" disabled={this.state.isLoading} className={classes.button} onClick={this.onSubmit}
                         >
