@@ -19,8 +19,8 @@ const styles = theme => ({
     },
     container: {
         width: 500,
-        marginTop: 50,
-        marginBottom: 50,
+        marginTop: 100,
+        marginBottom: 100,
         display: 'flex',
         flexWrap: 'wrap',
         flexDirection: 'column',
