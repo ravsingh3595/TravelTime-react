@@ -9,19 +9,23 @@ import App from './App';
 import * as serviceWorker from './serviceWorker';
 
 import rootReducer from './rootReducer';
-// import routes from './Routes/Route';
+
+import {Router} from './Routes/Route';
+
 
 const store = createStore(
     rootReducer,
     compose(
       applyMiddleware(thunk),
-      window.devToolsExtension ? window.devToolsExtension() : f => f
+      // window.devToolsExtension ? window.devToolsExtension() : f => f
+      window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+      // + window._REDUX_DEVTOOLS_EXTENSION_ && window.__REDUX_DEVTOOLS_EXTENSION__()
     )
   );
 
 ReactDOM.render(
   <Provider store={store}>
-    <App/>
+    <Router/>
   </Provider>, document.getElementById('root'));
 
 // If you want your app to work offline and load faster, you can change

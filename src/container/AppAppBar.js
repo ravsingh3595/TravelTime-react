@@ -5,15 +5,11 @@ import { withStyles } from '@material-ui/core/styles';
 import Link from '@material-ui/core/Link';
 import AppBar from '../component/AppBar';
 import Toolbar, { styles as toolbarStyles } from '../component/Toolbar';
-import LoginPage from '../Pages/Login';
-import { Route, Switch } from 'react-router-dom';
-import SignupPage from '../Pages/SignupPage';
 
 const styles = theme => ({
   title: {
     fontSize: 28,
   },
-  // placeholder: toolbarStyles(theme).root,
   toolbar: {
     justifyContent: 'space-between',
   },
@@ -53,7 +49,7 @@ function AppAppBar(props) {
             className={classes.title}
             href="/"
           >
-            {'TraveTime'}
+            {'TravelTime'}
           </Link>
           <div className={classes.right}>
             <Link
@@ -62,7 +58,7 @@ function AppAppBar(props) {
               underline="none"
               className={classes.rightLink}
               href="/login">
-              {'SIGN IN'}
+              {'LOGIN'}
             </Link>
             <Link
               variant="h6"
@@ -74,10 +70,6 @@ function AppAppBar(props) {
           </div>
         </Toolbar>
       </AppBar>
-      <Switch>
-        <Route path="/login" exact component = {LoginPage}/> 
-        <Route path="/signup" exact component = {SignupPage}/> 
-      </Switch>
     </div>
     
   );
