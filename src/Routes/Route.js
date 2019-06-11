@@ -1,8 +1,8 @@
 import React from 'react';
-import { Route, IndexRoute } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 
 import App from '../App'
-import Home from '../Pages/Home';
+// import Home from '../Pages/Home';
 import LoginPage from '../Pages/Login';
 import SignupPage from '../Pages/SignupPage'
 import SearchPage from '../Pages/SearchPage';

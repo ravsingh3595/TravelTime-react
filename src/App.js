@@ -1,10 +1,10 @@
 import React from 'react';
-import Home from './Pages/Home';
-import LoginPage from './Pages/Login';
-import SignupPage from './Pages/SignupPage'
-import SearchPage from './Pages/SearchPage';
+// import Home from './Pages/Home';
+// import LoginPage from './Pages/Login';
+// import SignupPage from './Pages/SignupPage'
+// import SearchPage from './Pages/SearchPage';
 import Itinerary from './Pages/Itinerary';
-import {BrowserRouter, Route, Switch} from 'react-router-dom';
+// import {BrowserRouter, Route, Switch} from 'react-router-dom';
 
 import './App.css';
 

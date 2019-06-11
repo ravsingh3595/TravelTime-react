@@ -114,7 +114,7 @@ function ProductCategories(props) {
             style={{
               width: image.width,
             }}
-            // onClick={this.onClick}
+            onClick={this.onClick}
           >
             <div
               className={classes.imageSrc}
