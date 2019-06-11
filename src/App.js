@@ -1,4 +1,5 @@
 import React from 'react';
+
 import PropTypes from 'prop-types';
 import Home from './Pages/Home';
 import LoginPage from './Pages/Login';
@@ -51,6 +52,7 @@ class App extends React.Component {
 App.propTypes = {
   
   history: PropTypes.object.isRequired
+
 }
 
 export default App;

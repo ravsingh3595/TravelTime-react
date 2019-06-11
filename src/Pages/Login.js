@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import Link from '@material-ui/core/Link';
 import TextField from '@material-ui/core/TextField';
