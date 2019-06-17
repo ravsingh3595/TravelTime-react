@@ -1,11 +1,13 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
-import ButtonBase from '@material-ui/core/ButtonBase';
+import Button from '../component/Button';
+// import ButtonBase from '@material-ui/core/ButtonBase';
 import LayoutBody from '../component/LayoutBody';
 import Typography from '../component/Typography';
 import DummyData from '../dummyData';
 import Divider from '@material-ui/core/Divider';
+import Link from '@material-ui/core/Link';
 
 const styles = theme => ({
   root: {
@@ -74,6 +76,7 @@ const styles = theme => ({
   },
   imageTitle: {
     position: 'relative',
+    fontSize: 16,
     padding: `${theme.spacing.unit * 2}px ${theme.spacing.unit * 4}px ${theme.spacing.unit + 6}px`,
   },
   imageMarked: {
@@ -89,13 +92,16 @@ const styles = theme => ({
 
 
 
-function ProductCategories(props) {
+
+function TopChoices(props) {
   const { classes } = props;
 
-  function onClick(event){
-    event.preventDefault();
-    console.log('Button was clicked.');
-  }
+  // function onClick(event){
+  //   // event.preventDefault();
+  //   console.log("Clicked " + event.title);
+    
+  // }
+  
 
   return (
     <LayoutBody className={classes.root} component="section" width="xlarge" >
@@ -108,13 +114,16 @@ function ProductCategories(props) {
       <Divider variant="fullWidth"/>
       <div className={classes.images}>
         {DummyData.map(image => (
-          <ButtonBase
+          <Button
             key={image.title}
             className={classes.imageWrapper}
             style={{
               width: image.width,
             }}
-            onClick={this.onClick}
+            // onClick={() => onClick(image)}
+            component={linkProps => (
+              <Link {...linkProps} href="/itinerary" variant="button" />
+            )}
           >
             <div
               className={classes.imageSrc}
@@ -134,15 +143,16 @@ function ProductCategories(props) {
                 <div className={classes.imageMarked} />
               </Typography>
             </div>
-          </ButtonBase>
+            
+          </Button>
         ))}
       </div>
     </LayoutBody>
   );
 }
 
-ProductCategories.propTypes = {
+TopChoices.propTypes = {
   classes: PropTypes.object.isRequired,
 };
 
-export default withStyles(styles)(ProductCategories);
+export default withStyles(styles)(TopChoices);

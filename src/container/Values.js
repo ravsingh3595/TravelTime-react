@@ -1,6 +1,6 @@
 import React from "react";
 import './Values.css';
-import { GoChecklist, GoHeart } from "react-icons/go";
+import { GoChecklist } from "react-icons/go";
 import { IoIosMedkit, IoIosStats } from "react-icons/io";
 
 const values = () =>{

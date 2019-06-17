@@ -4,7 +4,7 @@ import classNames from 'classnames';
 import { withStyles } from '@material-ui/core/styles';
 import Link from '@material-ui/core/Link';
 import AppBar from '../component/AppBar';
-import Toolbar, { styles as toolbarStyles } from '../component/Toolbar';
+import Toolbar from '../component/Toolbar';
 
 const styles = theme => ({
   title: {
@@ -35,10 +35,7 @@ const styles = theme => ({
 });
 
 class AppBarLogin extends React.Component{
-    constructor(props) {
-        super(props);
-    }
-
+    
     render(){
         const { classes } = this.props;
         return(

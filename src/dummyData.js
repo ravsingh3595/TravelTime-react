@@ -141,4 +141,50 @@ export const profileData = {
   ]
 };
 
+export const itineraryData = {
+  tripImage: Image,
+  tripName: "Tobermory",
+  tripHighLight: "",
+  tripDescription: "",
+  numberOfDays: "3",
+  weatherMin: "10",
+  weatherMax: "20",
+  dayWise: [
+    {
+      image: Image,
+      destination: "a",
+      description: "",
+      touristAttraction: "",
+      bestThing: "",
+      foodSpeciality: "",
+      activity: "",
+      dayDelight: "",
+      flow: "left"
+    },
+    {
+      image: Image,
+      destination: "bhhhkjjnekjngjk enkjsnjkfwenkjasfn kjwenkjsf nkjewanskjf qkjea",
+      description: "",
+      touristAttraction: "",
+      bestThing: "",
+      foodSpeciality: "",
+      activity: "",
+      dayDelight: "",
+      flow: "right"
+      
+    },
+    {
+      image: Image,
+      destination: "c",
+      description: "",
+      touristAttraction: "",
+      bestThing: "",
+      foodSpeciality: "",
+      activity: "",
+      dayDelight: "",
+      flow: "left"
+    },
+  ]
+}
+
 export default data;

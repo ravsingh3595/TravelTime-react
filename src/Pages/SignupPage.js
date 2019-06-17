@@ -9,12 +9,7 @@ class SignupPage extends React.Component{
     render(){
         const { userSignupRequest, addAlertMessage} = this.props;
         return(
-            <div className="row">
-                <div className="col-md-4 col-md-offset-4">
-                    <SignupForm userSignupRequest={userSignupRequest} history={this.props.history} addAlertMessage= {addAlertMessage}/>
-                </div>
-            </div>
-            
+            <SignupForm userSignupRequest={userSignupRequest} history={this.props.history} addAlertMessage= {addAlertMessage}/>
         );
     }
 }
