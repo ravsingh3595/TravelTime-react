@@ -5,7 +5,7 @@ import TextFieldComponent from '../component/TextFieldComponent';
 import Typography from '../component/Typography';
 import Button from '../component/Button';
 import PropTypes from 'prop-types';
-import validateInput from '../Actions/Validations/Signup';
+// import validateInput from '../Actions/Validations/Signup';
 import AppBar from '../container/AppAppBar.js';
 import fire from '../Firebase/Firebase';
 // import { withRouter } from 'react-router-dom';
@@ -79,13 +79,13 @@ class SignupForm extends React.Component {
         this.setState({ [event.target.name]: event.target.value });
     }
 
-    isValid(){
-        const {errors, isValid} = validateInput(this.state)
-        if(!isValid){
-            // this.setState({errors})
-        }
-        return isValid;
-    }
+    // isValid(){
+    //     const {errors, isValid} = validateInput(this.state)
+    //     if(!isValid){
+    //         // this.setState({errors})
+    //     }
+    //     return isValid;
+    // }
 
     onSubmit(event) {
         event.preventDefault();

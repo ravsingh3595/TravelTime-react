@@ -5,7 +5,7 @@ import TextField from '@material-ui/core/TextField';
 import Typography from '../component/Typography';
 import Button from '../component/Button';
 import Image from '../assest/travel-world.jpg';
-import validateInput from '../Actions/Validations/Login';
+// import validateInput from '../Actions/Validations/Login';
 import AppBar from '../container/AppAppBar.js';
 import fire from '../Firebase/Firebase';
 
