@@ -1,15 +1,17 @@
 import React,{Component} from 'react';
 import classnames from 'classnames';
-import PropTypes from 'prop-types';
+// import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
-import Grid from '@material-ui/core/Grid';
-import Link from '@material-ui/core/Link';
+// import Grid from '@material-ui/core/Grid';
+// import Link from '@material-ui/core/Link';
 import LayoutBody from '../component/LayoutBody';
-import Button from '../component/Button';
+// import Button from '../component/Button';
 import Typography from '../component/Typography';
 import Divider from '@material-ui/core/Divider';
-import { itineraryData } from '../dummyData'
-
+import { itineraryData } from '../dummyData';
+import { MdLocationOn, MdShoppingCart } from "react-icons/md";
+import { FaUtensils, FaHiking } from "react-icons/fa";
+// import SingleLineGridList from '../component/Gallery';
 
 
 const styles = theme => ({
@@ -22,24 +24,22 @@ const styles = theme => ({
     },
     layoutBody: {
         overflow: 'hidden',
-      marginTop: theme.spacing.unit * 10,
-      marginBottom: theme.spacing.unit * 15,
-      position: 'relative',
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-      backgroundColor: "#76b852",
-    //   [theme.breakpoints.down('md')]:{
-    //     margin: '100px',
-    // },
-    //   alignContent: 'space-around',
+        marginTop: theme.spacing.unit * 10,
+        marginBottom: theme.spacing.unit * 15,
+        position: 'relative',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        backgroundColor: "#5BA16F",
+        
     },
     item: {
+        marginTop: theme.spacing.unit * 10,
       display: 'flex',
       flexDirection: 'column',
       alignItems: 'center',
-      padding: '0px 10px',
-      
+      padding: '20px 10px 10px 10px',
+    //   boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)',
     //   border: '2px solid #ffffff'           //Should be removed at the end
     },
     title: {
@@ -75,62 +75,90 @@ const styles = theme => ({
     },
     day:{
         display: 'block',
-        width: '90%',
+        width: '80%',
+        color: '#fff',
+        boxShadow: '0 10px 10px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)',
+        [theme.breakpoints.down('sm')]:{
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+        },
+        
     },
     tripImage: {
-        // display: 'inline-block',
-        // border: '2px solid #ffffff',
-        // position: 'relative',
         width: '50%',
         height: '400px',
         overflow: 'hidden',
-        [theme.breakpoints.down('md')]:{
-            height: '300px',
-        },
         [theme.breakpoints.down('sm')]:{
-            height: '250px',
+            width: '70%',
+            flex: '1 100%',
         },
+        // borderRadius: '10px',
     },
 
     tripInfo: {
-        // display: 'inline-block',
-        // border: '2px solid #ffffff',
-        backgroundColor: '#71B280',
+        backgroundColor: '#73C58B',
         overflow: 'hidden',
         width: '50%',
         height: '400px',
-        overflow: 'hidden',
-        [theme.breakpoints.down('md')]:{
-            height: '300px',
-        },
         [theme.breakpoints.down('sm')]:{
-            height: '250px',
+            width: '70%',
+            flex: '1 100%',
         },
+        // borderRadius: '10px',
     },
     left: {
         display: 'block',
         float: 'left',
         position: 'relative',
+        [theme.breakpoints.down('sm')]:{
+            clear: 'both',
+        },
     },
     right: {
         display: 'block',
         float: 'right',
         position: 'relative',
+        [theme.breakpoints.down('sm')]:{
+            clear: 'both',
+        },
     },
     infoBlock:{
-        
-        padding: '50px',
+        padding: '3em 2.5em 2.5em 2.5em',
         [theme.breakpoints.down('md')]:{
-            padding: '40px',
+            padding: '2.0em 1.5em 1.5em 1.5em',
         },
+    },
+    ul:{
+        display: 'inline-flex',
+        width: '100%',
+        listStyleType: 'none',
+        margin: '0',
+        padding: '0',
+        justifyContent: 'center',
         [theme.breakpoints.down('sm')]:{
-            padding: '30px',
-        },
-    }
+            padding: '1.5em 0.5em 1.5em 0.5em',
+        }
 
-   
-    
-    
+    },
+    li:{
+        // border: '1px solid #ffffff',
+        display: 'inline-flex',
+        float: 'left',
+        width: '50%',
+        minWidth: '45%',
+        position: 'relative',
+        padding: '1em 1em 1em 2em',
+        [theme.breakpoints.down('md')]:{
+            padding: '0.5em 0em 0.5em 0.5em',
+        }
+    },
+    icon:{
+        flex: 1, 
+    }, 
+    feature:{
+        flex: 4
+    },
 });
 
 class ItineraryDescription extends Component {
@@ -159,24 +187,60 @@ class ItineraryDescription extends Component {
                     {itineraryData.dayWise.map(dayWiseData => (
                         <React.Fragment  key = {dayWiseData.destination}>
                             <div className= {classnames(classes.tripImage, dayWiseData.flow === "left" ? classes.left : classes.right)}>
-                                <img src={dayWiseData.image}/>
+                                <img src={dayWiseData.image} alt={dayWiseData.destination} style={{height:"100%"}}/>
                             </div>
                             <div className={classnames(classes.tripInfo, dayWiseData.flow === "left: " ? classes.left : classes.right)}>
                                 <div className={classes.infoBlock}>
-                                    <h5>{dayWiseData.destination}</h5>
+                                    <h2>{dayWiseData.destination}</h2>
                                     <p>{dayWiseData.description}</p>
-                                    <ul>
-                                        <li>
-                                            touristAttraction: {dayWiseData.touristAttraction}
+                                    <ul className={classes.ul}>
+                                        <li className={classes.li}>
+                                            <div className={classes.icon}>
+                                                <MdLocationOn size={30}/>  
+                                            </div>
+                                            <div className={classes.feature}>
+                                                <h4 style={{margin: 0, paddingBottom: 10}}>
+                                                    Tourist Attraction:
+                                                </h4>
+                                                
+                                                    {dayWiseData.touristAttraction}
+                                            </div>
                                         </li>
-                                        <li>
-                                            bestThing: {dayWiseData.bestThing}
+                                        <li className={classes.li}>
+                                            <div className={classes.icon}>
+                                                <MdShoppingCart size={30}/> 
+                                            </div>
+                                            <div className={classes.feature}>
+                                                <h4 style={{margin: 0, paddingBottom: 10}}>
+                                                    Best Thing to Visit:
+                                                </h4>
+                                                    {dayWiseData.bestThing}
+                                            </div>
                                         </li>
-                                        <li>
-                                            foodSpeciality: {dayWiseData.foodSpeciality}
+                                    </ul>
+                                    <Divider/>
+                                    <ul className={classes.ul}>
+                                        <li className={classes.li}>
+                                            <div className={classes.icon}>
+                                                <FaUtensils size={30}/>  
+                                            </div>
+                                            <div className={classes.feature}>
+                                                <h4 style={{margin: 0, paddingBottom: 10}}>
+                                                    Food Speciality:
+                                                </h4>
+                                                {dayWiseData.foodSpeciality}
+                                            </div>
                                         </li>
-                                        <li>
-                                            activity: {dayWiseData.activity}
+                                        <li className={classes.li}>
+                                            <div className={classes.icon}>
+                                                <FaHiking size={30}/>
+                                            </div>
+                                            <div className={classes.feature}>
+                                                <h4 style={{margin: 0, paddingBottom: 10}}>
+                                                    Best Activity:
+                                                </h4>
+                                                {dayWiseData.activity}
+                                            </div>
                                         </li>
                                     </ul>
                                 </div>
@@ -184,31 +248,12 @@ class ItineraryDescription extends Component {
                         </React.Fragment>
                     ))}
                 </div>
-                {/* <div className={classes.day}>
-                    
-                    <div className={classes.tripInfo+" "+classes.left }>
-                        <div className={classes.infoBlock}>
-
-                            I'm the InfoI'm the InfoI'm the InfoI'm the Info
-                            I'm the InfoI'm the InfoI'm the InfoI'm the Info
-                            I'm the InfoI'm the InfoI'm the InfoI'm the Info
-                            I'm the InfoI'm the InfoI'm the InfoI'm the Info
-                            I'm the InfoI'm the Info
-                        
-                        </div>
-                    </div>
-                    <div className= {classes.tripImage+" "+classes.right }>
-                        <img src={itineraryData.tripImage} />
-                    </div>
-                </div> */}
-                <section className={classes.item}>photogalery</section>
+                <section className={classes.item}>
+                    {/* <SingleLineGridList/> */}
+                </section>
                 <section className={classes.item}>Reviews/blog</section>
                 <section className={classes.item}>customization</section>
                 <section className={classes.item}>Route on map</section>
-                <div className={classes.item}>
-
-                </div>
-
             </LayoutBody>
             </section>
           </div>
