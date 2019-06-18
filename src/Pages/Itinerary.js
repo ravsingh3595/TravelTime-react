@@ -17,7 +17,7 @@ class Itinerary extends Component {
           <div>
             <AppBar/>
             {/* <h1>{title}</h1> */}
-            {/* <ItineraryHeader/> */}
+            <ItineraryHeader/>
             <ItineraryDescription/>
           </div>
         );

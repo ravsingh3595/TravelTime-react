@@ -142,18 +142,42 @@ export const profileData = {
 };
 
 export const itineraryData = {
-  tripImage: Image,
+  tripImage: "https://www.mountaintreksnepal.com/wp-content/uploads/2018/05/Everest-base-camp-luxury-trekking-1024x400.jpg",
   tripName: "Tobermory",
-  tripHighLight: "",
-  tripDescription: "",
+  tripHighLight: "Valley of hikes",
+  tripDescription: "After breakfast, you’ll travel by vehicle to the Cinque Torri seggiovia (“chairlift”) that will whisk you to the meadows adjacent to the impressive limestone towers of the Cinque Torri (“Five Towers”). Relax at the mountain rifugio way up the precipitous walls of the towers"+
+                    "After breakfast, you’ll travel by vehicle to the Cinque Torri seggiovia (“chairlift”) that will whisk you to the meadows adjacent to the impressive limestone towers of the Cinque Torri (“Five Towers”). Relax at the mountain rifugio way up the precipitous walls of the towers",
   numberOfDays: "3",
   weatherMin: "10",
   weatherMax: "20",
   dayWise: [
     {
-      image: Image,
-      destination: "a",
-      description: "",
+      image: "https://mountainhikingholidays.com/wp-content/uploads/2016/12/misurina_853.jpg",
+      destination: " Galleria Anticima",
+      description: "After breakfast, you’ll travel by vehicle to the Cinque Torri seggiovia (“chairlift”) that will whisk you to the meadows adjacent to the impressive limestone towers of the Cinque Torri (“Five Towers”). Relax at the mountain rifugio way up the precipitous walls of the towers",
+      touristAttraction: "touristAttraction",
+      bestThing: "bestThing",
+      foodSpeciality: "foodSpeciality",
+      activity: "activity",
+      dayDelight: "",
+      flow: "left"
+    },
+    {
+      image: "https://mountainhikingholidays.com/wp-content/uploads/2016/12/ciadin_dei_tocci_853.jpg",
+      destination: "Rifugio Boe ",
+      description: "Hike into the high, other-worldly landscape of the Sella massif. Ride a cable car to the Belvedere ridge high above the Fassa Valley for stunning “front and center” views of glacier-clad Marmolada, a peak known as the “Queen of the Dolomites.",
+      touristAttraction: "touristAttraction",
+      bestThing: "bestThing",
+      foodSpeciality: "foodSpeciality",
+      activity: "activity",
+      dayDelight: "",
+      flow: "right"
+      
+    },
+    {
+      image: "https://mountainhikingholidays.com/wp-content/uploads/2016/12/alpe_di_siusi_2009_853_1.jpg",
+      destination: "Peaks of the Sassolungo",
+      description: "From Ortisei, ascend into the mountains via the Seceda cable car. Hike among the craggy peaks of the mountain group called the Odle Geisler (odle means “needles” in Ladin), and amble through the open meadowlands of the Alpe di Cisles and Mastle Alm",
       touristAttraction: "",
       bestThing: "",
       foodSpeciality: "",
@@ -162,25 +186,24 @@ export const itineraryData = {
       flow: "left"
     },
     {
-      image: Image,
-      destination: "bhhhkjjnekjngjk enkjsnjkfwenkjasfn kjwenkjsf nkjewanskjf qkjea",
-      description: "",
-      touristAttraction: "",
-      bestThing: "",
-      foodSpeciality: "",
-      activity: "",
+      image: "https://mountainhikingholidays.com/wp-content/uploads/2016/12/rifugio_boe_853.jpg",
+      destination: "Rifugio Bo",
+      description: "Hike into the high, other-worldly landscape of the Sella massif. Ride a cable car to the Belvedere ridge high above the Fassa Valley for stunning “front and center” views of glacier-clad Marmolada, a peak known as the “Queen of the Dolomites.",
+      touristAttraction: "touristAttraction",
+      bestThing: "bestThing",
+      foodSpeciality: "foodSpeciality",
+      activity: "activity",
       dayDelight: "",
       flow: "right"
-      
     },
     {
-      image: Image,
-      destination: "c",
-      description: "",
-      touristAttraction: "",
-      bestThing: "",
-      foodSpeciality: "",
-      activity: "",
+      image: "https://mountainhikingholidays.com/wp-content/uploads/2016/12/seceda_hikers_853.jpg",
+      destination: " Galleria Anticim",
+      description: "After breakfast, you’ll travel by vehicle to the Cinque Torri seggiovia (“chairlift”) that will whisk you to the meadows adjacent to the impressive limestone towers of the Cinque Torri (“Five Towers”). Relax at the mountain rifugio way up the precipitous walls of the towers",
+      touristAttraction: "touristAttraction",
+      bestThing: "bestThing",
+      foodSpeciality: "foodSpeciality",
+      activity: "activity",
       dayDelight: "",
       flow: "left"
     },
