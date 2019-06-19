@@ -1,28 +1,32 @@
 import React,{Component} from 'react';
 import PropTypes from 'prop-types';
 import { withStyles } from '@material-ui/core/styles';
-
 import Divider from '@material-ui/core/Divider';
 import Image from '../assest/algonquin.jpg';
-// import Button from '@material-ui/core/Button';
-import LayoutBody from '../component/LayoutBody';
+import Typography from '../component/Typography';
 import Button from '../component/Button';
-import Link from '@material-ui/core/Link';
-// import Typography from '../component/Typography';
+// import Link from '@material-ui/core/Link';
 import {itineraryData} from '../dummyData';
+import { MdToday } from "react-icons/md";
+import { TiWeatherPartlySunny } from "react-icons/ti";
+
 
 const styles = theme => ({
     root: {
       display: 'flex',
       flexDirection: 'column',
-      backgroundColor: "#EFF1F6",
+      backgroundColor: "#73C58B",
       overflow: 'hidden',
+      color: "#fff",
     },
     imageWithButton:{
       position: 'relative',
       width: '100%',
       height: '350px',
       overflow: 'hidden',
+      [theme.breakpoints.down('sm')]:{
+        height: 'auto',
+      }
     },
     img :{
       width: '100%',
@@ -30,40 +34,69 @@ const styles = theme => ({
   },
     button: {
       position: 'absolute',
-      top: "80%",
+      top: "70%",
       left: "80%",
+      width: "180px",
+      fontSize: 16,
+      backgroundColor: "#73C58B",
+      borderRadius: "80%",
+      [theme.breakpoints.down('sm')]:{
+        width: "120px",
+        fontSize: 10,
+      }
+    },
+    descriptionContainer:{
+      overflow: 'hidden',
+      padding: '70px 50px 50px 50px',
+      display: 'flex',
+      flexDirection: 'row',
+      alignContent: 'flex-start',
+      [theme.breakpoints.down('sm')]:{
+        flexDirection: 'column',
+      },
+    },
+    tripName:{
+      flex: 1,
+    },
+    tripDescription:{
+      flex: 4,
+      padding: '20px 10px 10px 30px',
+      [theme.breakpoints.down('md')]:{
+        flex: 2,
+      },
+    },
+    divider:{
+      marginTop: 10,
+      marginLeft: 50,
+      border: "2px solid white", 
       width: "200px",
-      // color: "#fff"
+      [theme.breakpoints.down('sm')]:{
+          border: "1px solid white", 
+          width: "100px",
+      },
     },
-    layoutBody: {
-      flex: '1 100%',
-      backgroundColor: "#fffa61",
-      marginTop: theme.spacing.unit * 10,
-      marginBottom: theme.spacing.unit * 15,
+    weatherContainer:{
       display: 'flex',
       flexDirection: 'row',
       alignItems: 'center',
+      justifyContent: 'center',
+      padding: '50px 200px',
+      [theme.breakpoints.down('sm')]:{
+        padding: '40px 100px'
     },
-    item: {
-      display: 'flex',
-      flexDirection: 'row',
-      alignItems: 'center',
-      padding: `0px ${theme.spacing.unit * 5}px`,
+      [theme.breakpoints.down('sm')]:{
+        padding: '30px 50px'
     },
-    
-    
-  //   container :{
-  //     position: 'relative',
-  //     width: '100%',
-  //   },
-  
-  // btn :{
-  //     position: 'absolute',
-  //     top: "80%",
-  //     left: "80%",
-  //     width: "200px"
-  // }
-  
+    },
+    numberOfDays:{
+      flex: 1,
+
+    },
+    weather:{
+      flex: 1,
+            
+    }
+
 });
 
 class ItineraryHeader extends Component {
@@ -76,46 +109,46 @@ class ItineraryHeader extends Component {
     render(){
         const { classes } = this.props;
         return(
-          // <React.Fragment>
-          //   <div className={classes.container}>
-          //       <img className={classes.img} src={itineraryData.tripImage} alt="Logo" />
-          //       <Button className={classes.btn} variant="contained" color="primary" > Book Now </Button>
-          //   </div>
-          //   <ul className="flex-container">
-          //           <li class="flex-item placeName">
-          //               <h1>{itineraryData.tripName}</h1>
-          //               <Divider />
-          //               <h3>{itineraryData.tripHighLight}</h3>
-          //               <p>Number of Days: {itineraryData.numberOfDays}</p>
-          //           </li>
-          //           <li class="flex-item description "><h3>{itineraryData.tripDescription}</h3></li>
-          //       </ul>
-          // </React.Fragment>
-
-
             <div>
               <section className={classes.root}>
                 <div className={classes.imageWithButton}>
                   <img className={classes.img} src={itineraryData.tripImage} alt="Logo" />
-                  <Button className={classes.button} variant="contained" color="primary" > Book Now </Button>
+                  <Button className={classes.button} variant="contained" color="primary" 
+                  // component={linkProps => (<Link {...linkProps} href="/booking" variant="button" /> )}
+                  > Book Now </Button>
                 </div>
-  
-                    {/* <Button
-                      color="primary"
-                      size="large"
-                      variant="contained"
-                      className={classes.button}
-                      // component={linkProps => (
-                        // <Link {...linkProps} href="/booking" variant="button" />
-                      // )}
-                    >
-                     
-                      Get started
-                    </Button>  */}
-                <LayoutBody className={classes.layoutBody} width="xlarge" height="500px">
-                  
-                  
-                </LayoutBody>
+                <div className={classes.descriptionContainer}>
+                  <div className={classes.tripName}>
+                    <Typography style={{ color: "#fff", padding: '5px 20px 5px 5px'}} variant="h1" marked="center">
+                        <strong >{itineraryData.tripName}</strong>
+                    </Typography>
+                  <div className={classes.divider}></div>
+                    <Typography  style={{ color: "#fff", padding: '20px 0px 0px 20px', marginLeft: 20,}} variant="h4" component="h2">
+                      {itineraryData.tripHighLight}
+                    </Typography>
+                  </div>
+                  <div className={classes.tripDescription}>
+                    <Typography  style={{ color: "#fff"}} variant="subtitle2" component="h2">
+                      {itineraryData.tripDescription}
+                    </Typography>
+                  </div>
+                </div>
+                <Divider/>
+                <div className={classes.weatherContainer}>
+                  <div className={classes.numberOfDays}>
+                    <MdToday size={60} style={{ paddingLeft: 100}}/> 
+                    <Typography  style={{ color: "#fff",}} variant="h5" component="h2">
+                       Trip Duration: <strong>{itineraryData.numberOfDays} Days</strong>
+                    </Typography>
+                  </div>
+                  <div className={classes.weather}>
+                    <TiWeatherPartlySunny size={60} style={{ paddingLeft: 100}}/>
+                    <Typography  style={{ color: "#fff",}} variant="h5" component="h2">
+                    Wheather: <strong>{itineraryData.weatherMin}<sup>℉</sup> to {itineraryData.weatherMax}<sup>℉</sup></strong>
+                    </Typography>
+                  </div>
+                </div>
+                
               </section>
             </div>
         );

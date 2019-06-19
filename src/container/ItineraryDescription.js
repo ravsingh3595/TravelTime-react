@@ -90,7 +90,7 @@ const styles = theme => ({
         height: '400px',
         overflow: 'hidden',
         [theme.breakpoints.down('sm')]:{
-            width: '70%',
+            width: '60%',
             flex: '1 100%',
         },
         // borderRadius: '10px',
@@ -102,7 +102,7 @@ const styles = theme => ({
         width: '50%',
         height: '400px',
         [theme.breakpoints.down('sm')]:{
-            width: '70%',
+            width: '60%',
             flex: '1 100%',
         },
         // borderRadius: '10px',
