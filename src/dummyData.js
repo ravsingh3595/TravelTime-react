@@ -145,8 +145,10 @@ export const itineraryData = {
   tripImage: "https://www.mountaintreksnepal.com/wp-content/uploads/2018/05/Everest-base-camp-luxury-trekking-1024x400.jpg",
   tripName: "Tobermory",
   tripHighLight: "Valley of hikes",
-  tripDescription: "After breakfast, you’ll travel by vehicle to the Cinque Torri seggiovia (“chairlift”) that will whisk you to the meadows adjacent to the impressive limestone towers of the Cinque Torri (“Five Towers”). Relax at the mountain rifugio way up the precipitous walls of the towers"+
-                    "After breakfast, you’ll travel by vehicle to the Cinque Torri seggiovia (“chairlift”) that will whisk you to the meadows adjacent to the impressive limestone towers of the Cinque Torri (“Five Towers”). Relax at the mountain rifugio way up the precipitous walls of the towers",
+  tripDescription: "Best Hikes in the Dolomites The Sesto Dolomites, Val Badia & Val Gardena Printable version of trip itinerary Dolomites Slide Show We are offering two versions of our popular Dolomites tours in 2019 and 2020. See a map of the areas covered by each of the two Dolomites tours being offered in 2019 and 2020. For a June/July trip, see the description for our “Best Hikes in the Dolomites (Summer)” hiking tour (featuring the spectacular Brenta Dolomites and the Pale di San Martino) at the height of wildflower season. Explore the trails and landscapes amidst the peaks whose jagged silhouettes inspired one writer to call the mountains, “flames frozen in stone.” Among the most visually stunning mountains anywhere, the Dolomites offer a superb network of trails"+
+                    "—from broad, well-graded paths to challenging vie ferrate—that caters to hikers of all abilities. The first part of the trip centers on the eastern Dolomites where the needle-like spires and pinnacles of the range are at their finest."+
+                    "The second part focuses on the western portion of the range where extensive meadowlands, flower-filled villages, and soaring peaks make for a quintessential Dolomites adventure! The classic alpine landscape and the wide range of hiking choices make the "+
+                    "Dolomites one of our favorite hiking destinations! Revel in the glory of the Monti Pallidi (“Pale Mountains”) that legend says wear a cloak spun from moonbeams! In 2009, nine areas in the Dolomites were designated a UNESCO World Heritage Site.",
   numberOfDays: "3",
   weatherMin: "10",
   weatherMax: "20",
