@@ -251,8 +251,8 @@ class ItineraryDescription extends Component {
                 <section className={classes.item}>
                     {/* <SingleLineGridList/> */}
                 </section>
-                <section className={classes.item}>Reviews/blog</section>
-                <section className={classes.item}>customization</section>
+                {/* <section className={classes.item}>Reviews/blog</section>
+                <section className={classes.item}>customization</section> */}
                 <section className={classes.item}>Route on map</section>
             </LayoutBody>
             </section>
