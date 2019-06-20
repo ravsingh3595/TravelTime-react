@@ -5,7 +5,7 @@ import Divider from '@material-ui/core/Divider';
 import Image from '../assest/algonquin.jpg';
 import Typography from '../component/Typography';
 import Button from '../component/Button';
-// import Link from '@material-ui/core/Link';
+import Link from '@material-ui/core/Link';
 import {itineraryData} from '../dummyData';
 import { MdToday } from "react-icons/md";
 import { TiWeatherPartlySunny } from "react-icons/ti";
@@ -114,7 +114,7 @@ class ItineraryHeader extends Component {
                 <div className={classes.imageWithButton}>
                   <img className={classes.img} src={itineraryData.tripImage} alt="Logo" />
                   <Button className={classes.button} variant="contained" color="primary" 
-                  // component={linkProps => (<Link {...linkProps} href="/booking" variant="button" /> )}
+                  component={linkProps => (<Link {...linkProps} href="/booking" variant="button" /> )}
                   > Book Now </Button>
                 </div>
                 <div className={classes.descriptionContainer}>
