@@ -11,6 +11,7 @@ import Divider from '@material-ui/core/Divider';
 import { itineraryData } from '../dummyData';
 import { MdLocationOn, MdShoppingCart } from "react-icons/md";
 import { FaUtensils, FaHiking } from "react-icons/fa";
+import MapContainer from '../component/MapContainer';
 // import SingleLineGridList from '../component/Gallery';
 
 
@@ -39,7 +40,7 @@ const styles = theme => ({
       flexDirection: 'column',
       alignItems: 'center',
       padding: '20px 10px 10px 10px',
-    //   boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)',
+      boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)',
     //   border: '2px solid #ffffff'           //Should be removed at the end
     },
     title: {
@@ -248,12 +249,16 @@ class ItineraryDescription extends Component {
                         </React.Fragment>
                     ))}
                 </div>
+                
                 <section className={classes.item}>
                     {/* <SingleLineGridList/> */}
                 </section>
+                {/* <section className={classes.item}>
+                    <h1>Map is here</h1>
+                    <MapContainer/></section> */}
                 {/* <section className={classes.item}>Reviews/blog</section>
                 <section className={classes.item}>customization</section> */}
-                <section className={classes.item}>Route on map</section>
+                
             </LayoutBody>
             </section>
           </div>
