@@ -6,6 +6,7 @@ class BookingPage1 extends React.Component{
         return(
             <div>
                 <h1>Lets Make a Booking!</h1>
+                <h6>Enter your details</h6>
                 <HorizontalLinearStepper/>
             </div>
         );
