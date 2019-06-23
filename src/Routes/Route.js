@@ -11,6 +11,7 @@ import SignupPage from '../Pages/SignupPage'
 import Itinerary from '../Pages/Itinerary';
 import Profile from "../Pages/Profile";
 import PhotoGallery from "../Pages/PhotoGallery";
+import BookingPage from "../Pages/BookingPage1";
 
 export const  Router = () => {
   return( 
@@ -20,6 +21,7 @@ export const  Router = () => {
       <Route path="/signup" component={SignupPage} />
       <Route path="/login" component={LoginPage} />
       <Route path="/itinerary" component={Itinerary} />
+      <Route path="/booking" component={BookingPage}/>
       <Route path = "/profile" component = {Profile} />
       <Route path = "/gallery" component = {PhotoGallery} />
     </div>
