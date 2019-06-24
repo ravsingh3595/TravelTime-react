@@ -251,7 +251,7 @@ class ItineraryDescription extends Component {
                 </div>
                 
                 <section className={classes.item}>
-                    <Gallery/>
+                    {/* <Gallery/> */}
                 </section>
                 {/* <section className={classes.item}>
                     <h1>Map is here</h1>
