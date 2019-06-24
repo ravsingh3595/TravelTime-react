@@ -29,10 +29,10 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
-function SingleLineGridList() {
-  const classes = useStyles();
-
-  return (
+class Gallery extends React.Component {
+  render(){
+    const classes = useStyles();
+    return(
     <div className={classes.root}>
       <GridList className={classes.gridList} cols={2.5}>
         {data.map(tile => (
@@ -54,7 +54,9 @@ function SingleLineGridList() {
         ))}
       </GridList>
     </div>
-  );
+    );
+  }
 }
 
-export default makeStyles(useStyles)(SingleLineGridList);
+ 
+export default makeStyles(useStyles)(Gallery);

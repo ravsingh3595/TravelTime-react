@@ -11,8 +11,8 @@ import Divider from '@material-ui/core/Divider';
 import { itineraryData } from '../dummyData';
 import { MdLocationOn, MdShoppingCart } from "react-icons/md";
 import { FaUtensils, FaHiking } from "react-icons/fa";
-import MapContainer from '../component/MapContainer';
-// import SingleLineGridList from '../component/Gallery';
+// import MapContainer from '../component/MapContainer';
+import Gallery from '../component/Gallery';
 
 
 const styles = theme => ({
@@ -251,7 +251,7 @@ class ItineraryDescription extends Component {
                 </div>
                 
                 <section className={classes.item}>
-                    {/* <SingleLineGridList/> */}
+                    <Gallery/>
                 </section>
                 {/* <section className={classes.item}>
                     <h1>Map is here</h1>
