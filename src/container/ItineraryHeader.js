@@ -15,9 +15,9 @@ const styles = theme => ({
     root: {
       display: 'flex',
       flexDirection: 'column',
-      backgroundColor: "#73C58B",
+      backgroundColor: "#fff",
       overflow: 'hidden',
-      color: "#fff",
+      color: "#5BA16F",
     },
     imageWithButton:{
       position: 'relative',
@@ -68,7 +68,7 @@ const styles = theme => ({
     divider:{
       marginTop: 10,
       marginLeft: 50,
-      border: "2px solid white", 
+      border: "2px solid #5BA16F", 
       width: "200px",
       [theme.breakpoints.down('sm')]:{
           border: "1px solid white", 
@@ -119,16 +119,16 @@ class ItineraryHeader extends Component {
                 </div>
                 <div className={classes.descriptionContainer}>
                   <div className={classes.tripName}>
-                    <Typography style={{ color: "#fff", padding: '5px 20px 5px 5px'}} variant="h1" marked="center">
+                    <Typography style={{ color: "#5BA16F", padding: '5px 20px 5px 5px'}} variant="h1" marked="center">
                         <strong >{itineraryData.tripName}</strong>
                     </Typography>
                   <div className={classes.divider}></div>
-                    <Typography  style={{ color: "#fff", padding: '20px 0px 0px 20px', marginLeft: 20,}} variant="h4" component="h2">
+                    <Typography  style={{ color: "#5BA16F", padding: '20px 0px 0px 20px', marginLeft: 20,}} variant="h4" component="h2">
                       {itineraryData.tripHighLight}
                     </Typography>
                   </div>
                   <div className={classes.tripDescription}>
-                    <Typography  style={{ color: "#fff"}} variant="subtitle2" component="h2">
+                    <Typography  style={{ color: "#5BA16F"}} variant="subtitle2" component="h2">
                       {itineraryData.tripDescription}
                     </Typography>
                   </div>
@@ -137,13 +137,13 @@ class ItineraryHeader extends Component {
                 <div className={classes.weatherContainer}>
                   <div className={classes.numberOfDays}>
                     <MdToday size={60} style={{ paddingLeft: 100}}/> 
-                    <Typography  style={{ color: "#fff",}} variant="h5" component="h2">
+                    <Typography  style={{ color: "#5BA16F",}} variant="h5" component="h2">
                        Trip Duration: <strong>{itineraryData.numberOfDays} Days</strong>
                     </Typography>
                   </div>
                   <div className={classes.weather}>
                     <TiWeatherPartlySunny size={60} style={{ paddingLeft: 100}}/>
-                    <Typography  style={{ color: "#fff",}} variant="h5" component="h2">
+                    <Typography  style={{ color: "#5BA16F",}} variant="h5" component="h2">
                     Wheather: <strong>{itineraryData.weatherMin}<sup>℉</sup> to {itineraryData.weatherMax}<sup>℉</sup></strong>
                     </Typography>
                   </div>
