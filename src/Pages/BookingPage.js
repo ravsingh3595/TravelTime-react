@@ -21,7 +21,7 @@ const styles = theme => ({
     },
 });
 
-class BookingPage1 extends React.Component{
+class BookingPage extends React.Component{
     constructor(props){
         super(props);
         this.state = {
@@ -47,4 +47,4 @@ class BookingPage1 extends React.Component{
     }
 }
 
-export default withStyles(styles)(BookingPage1);
+export default withStyles(styles)(BookingPage);

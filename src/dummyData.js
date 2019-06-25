@@ -166,6 +166,8 @@ export const itineraryData = {
       foodSpeciality: "foodSpeciality",
       activity: "activity",
       dayDelight: "",
+      lat: "",
+      long: "",
       flow: "left"
     },
     {
@@ -177,6 +179,8 @@ export const itineraryData = {
       foodSpeciality: "foodSpeciality",
       activity: "activity",
       dayDelight: "",
+      lat: "",
+      long: "",
       flow: "right"
       
     },
@@ -184,11 +188,13 @@ export const itineraryData = {
       image: "https://mountainhikingholidays.com/wp-content/uploads/2016/12/alpe_di_siusi_2009_853_1.jpg",
       destination: "Peaks of the Sassolungo",
       description: "From Ortisei, ascend into the mountains via the Seceda cable car. Hike among the craggy peaks of the mountain group called the Odle Geisler (odle means “needles” in Ladin), and amble through the open meadowlands of the Alpe di Cisles and Mastle Alm",
-      touristAttraction: "",
-      bestThing: "",
-      foodSpeciality: "",
-      activity: "",
+      touristAttraction: "touristAttraction",
+      bestThing: "bestThing",
+      foodSpeciality: "foodSpeciality",
+      activity: "activity",
       dayDelight: "",
+      lat: "",
+      long: "",
       flow: "left"
     },
     {
@@ -200,6 +206,8 @@ export const itineraryData = {
       foodSpeciality: "foodSpeciality",
       activity: "activity",
       dayDelight: "",
+      lat: "",
+      long: "",
       flow: "right"
     },
     {
@@ -211,6 +219,8 @@ export const itineraryData = {
       foodSpeciality: "foodSpeciality",
       activity: "activity",
       dayDelight: "",
+      lat: "",
+      long: "",
       flow: "left"
     },
   ]

@@ -11,7 +11,7 @@ import SignupPage from '../Pages/SignupPage'
 import Itinerary from '../Pages/Itinerary';
 import Profile from "../Pages/Profile";
 import PhotoGallery from "../Pages/PhotoGallery";
-import BookingPage from "../Pages/BookingPage1";
+import BookingPage from "../Pages/BookingPage";
 
 export const  Router = () => {
   return( 

@@ -1,5 +1,7 @@
 .mapContainer div{
   position: relative !important;
+  width: 90%;
+  padding: 20px;
 
 }
 

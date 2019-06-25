@@ -35,15 +35,19 @@ const styles = theme => ({
         
     },
     item: {
+        backgroundColor: '#73C58B',
+        // backgroundColor: "#5BA16F",
         marginTop: theme.spacing.unit * 10,
-      display: 'flex',
-      flexDirection: 'column',
-      alignItems: 'center',
-      padding: '20px 10px 10px 10px',
-      boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)',
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        // padding: '20px 10px 10px 10px',
+        boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)',
+        width: '90%'
     //   border: '2px solid #ffffff'           //Should be removed at the end
     },
     title: {
+        
         margin: '100px 250px 10px 250px',
         color: "#ffffff",
         fontSize: 68,
@@ -76,7 +80,7 @@ const styles = theme => ({
     },
     day:{
         display: 'block',
-        width: '80%',
+        width: '90%',
         color: '#fff',
         boxShadow: '0 10px 10px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)',
         [theme.breakpoints.down('sm')]:{
@@ -164,6 +168,19 @@ const styles = theme => ({
         div:{
             position: 'relative',
         }
+    },
+    itemHeading:{
+        margin: '80px 200px 0px 200px',
+        color: "#ffffff",
+        fontSize: 48,
+        [theme.breakpoints.down('md')]:{
+            margin: '50px 100px 0px 100px',
+            fontSize: 36
+        },
+        [theme.breakpoints.down('sm')]:{
+            margin: '30px 70px 0px 70px',
+            fontSize: 36
+        },
 
     }
 });
@@ -258,17 +275,21 @@ class ItineraryDescription extends Component {
                 </div>
                 
                 <section className={classes.item}>
-                    <SingleLineGridList/>
-                </section>
-                {/* <section className={classes.item}>
-                
-                    <h1>Map is here</h1>
-                    <div className="mapContainer">
-                        <MapContainer />    
-
+                    <Typography variant="h3" className={classes.itemHeading}>
+                        Some Pictures by the travellers
+                    </Typography>
+                    <div style={{padding: '10px 20px 10px 20px', overflow:'hidden'}}>
+                        <SingleLineGridList/>
                     </div>
-                    
-            </section> */}
+                </section>
+                <section className={classes.item}>
+                    <Typography variant="h5" className={classes.itemHeading}>
+                        Find your destination on Map
+                    </Typography>
+                    <div className="mapContainer">
+                        {/* <MapContainer />     */}
+                    </div> 
+                </section>
                 {/* <section className={classes.item}>Reviews/blog</section>
                 <section className={classes.item}>customization</section> */}
                 
