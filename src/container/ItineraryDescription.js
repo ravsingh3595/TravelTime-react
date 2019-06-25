@@ -12,8 +12,8 @@ import { itineraryData } from '../dummyData';
 import { MdLocationOn, MdShoppingCart } from "react-icons/md";
 import { FaUtensils, FaHiking } from "react-icons/fa";
 // import MapContainer from '../component/MapContainer';
-import Gallery from '../component/Gallery';
-
+import SingleLineGridList from '../component/Gallery';
+import "./Values.css";
 
 const styles = theme => ({
     root: {
@@ -160,6 +160,12 @@ const styles = theme => ({
     feature:{
         flex: 4
     },
+    map1:{
+        div:{
+            position: 'relative',
+        }
+
+    }
 });
 
 class ItineraryDescription extends Component {
@@ -174,6 +180,7 @@ class ItineraryDescription extends Component {
           <div>
             <section className={classes.root}>
             <LayoutBody className={classes.layoutBody} width="xlarge">
+            
                 <section className={classes.item}>
                     <Typography className={classes.title} variant="h1" marked="center">
                         TOUR <strong style={{fontWeight: 'bold'}}>ITINERARY</strong>
@@ -251,11 +258,17 @@ class ItineraryDescription extends Component {
                 </div>
                 
                 <section className={classes.item}>
-                    {/* <Gallery/> */}
+                    <SingleLineGridList/>
                 </section>
                 {/* <section className={classes.item}>
+                
                     <h1>Map is here</h1>
-                    <MapContainer/></section> */}
+                    <div className="mapContainer">
+                        <MapContainer />    
+
+                    </div>
+                    
+            </section> */}
                 {/* <section className={classes.item}>Reviews/blog</section>
                 <section className={classes.item}>customization</section> */}
                 

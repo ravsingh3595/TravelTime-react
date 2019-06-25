@@ -141,6 +141,10 @@ export const profileData = {
   ]
 };
 
+export const ApiKey = {
+  api: "AIzaSyC8awoXAVmlUKOO4J5i6XbB62JRqr0CwPQ"
+}
+
 export const itineraryData = {
   tripImage: "https://www.mountaintreksnepal.com/wp-content/uploads/2018/05/Everest-base-camp-luxury-trekking-1024x400.jpg",
   tripName: "Tobermory",
