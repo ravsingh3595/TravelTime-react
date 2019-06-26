@@ -10,8 +10,8 @@ import SignupPage from '../Pages/SignupPage'
 // import SearchPage from '../Pages/SearchPage';
 import Itinerary from '../Pages/Itinerary';
 import Profile from "../Pages/Profile";
-import PhotoGallery from "../Pages/PhotoGallery";
 import BookingPage from "../Pages/BookingPage";
+import GalleryPage from '../Pages/GalleryPage';
 
 export const  Router = () => {
   return( 
@@ -23,7 +23,7 @@ export const  Router = () => {
       <Route path="/itinerary" component={Itinerary} />
       <Route path="/booking" component={BookingPage}/>
       <Route path = "/profile" component = {Profile} />
-      <Route path = "/gallery" component = {PhotoGallery} />
+      <Route path = "/gallery" component = {GalleryPage} />
     </div>
   </BrowserRouter>
   )
