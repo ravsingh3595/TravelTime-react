@@ -6,7 +6,8 @@ import GridListTileBar from '@material-ui/core/GridListTileBar';
 import ListSubheader from '@material-ui/core/ListSubheader';
 import IconButton from '@material-ui/core/IconButton';
 import InfoIcon from '@material-ui/icons/Info';
-import tileData from './tileData';
+import PropTypes from 'prop-types';
+import data  from '../dummyData';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -17,43 +18,29 @@ const useStyles = makeStyles(theme => ({
     backgroundColor: theme.palette.background.paper,
   },
   gridList: {
-    width: 500,
+    // width: 500,
     height: 450,
+    overflow: 'scroll',
   },
   icon: {
     color: 'rgba(255, 255, 255, 0.54)',
   },
 }));
 
-/**
- * The example data is structured as follows:
- *
- * import image from 'path/to/image.jpg';
- * [etc...]
- *
- * const tileData = [
- *   {
- *     img: image,
- *     title: 'Image',
- *     author: 'author',
- *   },
- *   {
- *     [etc...]
- *   },
- * ];
- */
-export default function TitlebarGridList() {
-  const classes = useStyles();
-
-  return (
-    <div className={classes.root}>
-      <GridList cellHeight={180} className={classes.gridList}>
-        <GridListTile key="Subheader" cols={2} style={{ height: 'auto' }}>
-          <ListSubheader component="div">December</ListSubheader>
+class GalleryView extends React.Component{
+    
+  render(){
+    const classes = useStyles;
+    const {month} = this.props;
+    return(
+      <div className={classes.root}>
+      <GridList cellHeight={250} className={classes.gridList}>
+        <GridListTile key="Subheader" cols={3} style={{ height: 'auto' }}>
+          <ListSubheader component="div">{month}</ListSubheader>
         </GridListTile>
-        {tileData.map(tile => (
-          <GridListTile key={tile.img}>
-            <img src={tile.img} alt={tile.title} />
+        {data.map(tile => (
+          <GridListTile key={tile.title}>
+            <img src={tile.url} alt={tile.title} />
             <GridListTileBar
               title={tile.title}
               subtitle={<span>by: {tile.author}</span>}
@@ -67,5 +54,13 @@ export default function TitlebarGridList() {
         ))}
       </GridList>
     </div>
-  );
+    );
+  }
 }
+  
+
+GalleryView.propTypes = {
+  month: PropTypes.string.isRequired
+}
+
+export default (GalleryView);
