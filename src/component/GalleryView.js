@@ -18,9 +18,8 @@ const useStyles = makeStyles(theme => ({
     backgroundColor: theme.palette.background.paper,
   },
   gridList: {
-    // width: 500,
+    width: 500,
     height: 450,
-    overflow: 'scroll',
   },
   icon: {
     color: 'rgba(255, 255, 255, 0.54)',
@@ -34,25 +33,29 @@ class GalleryView extends React.Component{
     const {month} = this.props;
     return(
       <div className={classes.root}>
-      <GridList cellHeight={250} className={classes.gridList}>
-        <GridListTile key="Subheader" cols={3} style={{ height: 'auto' }}>
-          <ListSubheader component="div">{month}</ListSubheader>
-        </GridListTile>
-        {data.map(tile => (
-          <GridListTile key={tile.title}>
-            <img src={tile.url} alt={tile.title} />
-            <GridListTileBar
-              title={tile.title}
-              subtitle={<span>by: {tile.author}</span>}
-              actionIcon={
-                <IconButton aria-label={`info about ${tile.title}`} className={classes.icon}>
-                  <InfoIcon />
-                </IconButton>
-              }
-            />
+        <GridListTile key="Subheader" cols={3} style={{ height: 'auto', listStyle: 'none' }}>
+            <ListSubheader component="div">{month}</ListSubheader>
           </GridListTile>
-        ))}
-      </GridList>
+        <div style={{height:'400px', overflow: 'scroll'}}>
+          <GridList cellHeight={250} className={classes.gridList}>
+          
+            {data.map(tile => (
+              <GridListTile key={tile.title}>
+                <img src={tile.url} alt={tile.title} />
+                <GridListTileBar
+                  title={tile.title}
+                  subtitle={<span>by: {tile.author}</span>}
+                  actionIcon={
+                    <IconButton aria-label={`info about ${tile.title}`} className={classes.icon}>
+                      <InfoIcon />
+                    </IconButton>
+                  }
+                />
+              </GridListTile>
+            ))}
+          </GridList>
+        </div>
+      
     </div>
     );
   }
