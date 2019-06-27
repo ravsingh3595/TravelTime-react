@@ -28,7 +28,12 @@ const styles = theme => ({
     },
     galleryContainer:{
         width: '50%',
-        justifyContent: 'center',
+        display: 'flex',
+        flexDirection: 'column',
+        alignContent: 'center',
+    },
+    galleryMonthContainer:{
+        padding: '30px',
     },
 });
 
@@ -49,6 +54,9 @@ class GalleryPage extends React.Component{
                         Some previous memories of travllers!
                     </Typography>
                     <div className={classes.galleryContainer}>
+                        <div className={classes.galleryMonthContainer}>
+
+                        </div>
                         <GalleryView month="JUNE"/>
                         <GalleryView month="MAY"/>
                         <GalleryView month="APRIL"/>

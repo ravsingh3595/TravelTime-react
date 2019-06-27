@@ -145,6 +145,41 @@ export const ApiKey = {
   api: "AIzaSyC8awoXAVmlUKOO4J5i6XbB62JRqr0CwPQ"
 }
 
+export const monthData = {
+  month:[
+    {
+      month: 'January'
+    },
+    {
+      month: 'Febuary'
+    },
+    {
+      month: 'January'
+    },
+    {
+      month: 'January'
+    },
+    {
+      month: 'January'
+    },
+    {
+      month: 'January'
+    },
+    {
+      month: 'January'
+    },
+    {
+      month: 'January'
+    },
+    {
+      month: 'January'
+    },
+    {
+      month: 'January'
+    },
+  ]
+}
+
 export const itineraryData = {
   tripImage: "https://www.mountaintreksnepal.com/wp-content/uploads/2018/05/Everest-base-camp-luxury-trekking-1024x400.jpg",
   tripName: "Tobermory",
