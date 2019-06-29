@@ -7,6 +7,7 @@ import { withStyles } from '@material-ui/core/styles';
 import PropTypes from 'prop-types';
 import { Divider } from '@material-ui/core';
 import Typography from '../component/Typography';
+import { monthData } from '../dummyData';
 
 const styles = theme => ({
     layoutBody: {
@@ -27,13 +28,14 @@ const styles = theme => ({
         fontWeight: 'bold',
     },
     galleryContainer:{
-        width: '50%',
+        width: '100%',
         display: 'flex',
         flexDirection: 'column',
-        alignContent: 'center',
+        alignItems: 'center',
     },
     galleryMonthContainer:{
-        padding: '30px',
+        width: '70%',
+        
     },
 });
 
@@ -55,11 +57,10 @@ class GalleryPage extends React.Component{
                     </Typography>
                     <div className={classes.galleryContainer}>
                         <div className={classes.galleryMonthContainer}>
-
+                            {monthData.month.map(month => (
+                                <GalleryView key={month.month} month={month.month}/>)
+                            )}
                         </div>
-                        <GalleryView month="JUNE"/>
-                        <GalleryView month="MAY"/>
-                        <GalleryView month="APRIL"/>
                     </div> 
                 </LayoutBody>
             </>

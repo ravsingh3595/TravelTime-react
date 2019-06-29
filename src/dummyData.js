@@ -154,28 +154,28 @@ export const monthData = {
       month: 'Febuary'
     },
     {
-      month: 'January'
+      month: 'March'
     },
     {
-      month: 'January'
+      month: 'April'
     },
     {
-      month: 'January'
+      month: 'May'
     },
     {
-      month: 'January'
+      month: 'June'
     },
     {
-      month: 'January'
+      month: 'July'
     },
     {
-      month: 'January'
+      month: 'August'
     },
     {
-      month: 'January'
+      month: 'September'
     },
     {
-      month: 'January'
+      month: 'October'
     },
   ]
 }
