@@ -278,7 +278,7 @@ class ItineraryDescription extends Component {
                     <Typography variant="h3" className={classes.itemHeading}>
                         Some Pictures by the travellers
                     </Typography>
-                    <div style={{padding: '10px 20px 10px 20px', overflow:'hidden'}}>
+                    <div style={{padding: '10px 20px 10px 30px', overflow:'hidden',}}>
                         <SingleLineGridList/>
                     </div>
                 </section>

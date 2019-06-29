@@ -7,16 +7,13 @@ class Itinerary extends Component {
    constructor(props){
         super(props);
         this.state = {
-
         }
     }
 
     render(){
-      // const {title} = this.props;
         return(
           <div>
             <AppBar/>
-            {/* <h1>{title}</h1> */}
             <ItineraryHeader/>
             <ItineraryDescription/>
           </div>

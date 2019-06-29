@@ -18,8 +18,8 @@ const useStyles = makeStyles(theme => ({
     backgroundColor: theme.palette.background.paper,
   },
   gridList: {
-    width: 500,
-    height: 450,
+    // width: '80%',
+    // height: 450,
   },
   icon: {
     color: 'rgba(255, 255, 255, 0.54)',
@@ -33,12 +33,11 @@ class GalleryView extends React.Component{
     const {month} = this.props;
     return(
       <div className={classes.root}>
-        <GridListTile key="Subheader" cols={3} style={{ height: 'auto', listStyle: 'none' }}>
-            <ListSubheader component="div">{month}</ListSubheader>
+        <GridListTile key="Subheader" cols={1} style={{ height: 'auto', listStyle: 'none',}}>
+            <ListSubheader style={{fontSize: 28, paddingTop: '60px'}} component="div">{month}</ListSubheader>
           </GridListTile>
-        <div style={{height:'400px', overflow: 'scroll'}}>
-          <GridList cellHeight={250} className={classes.gridList}>
-          
+        <div style={{height:'500px', overflow: 'scroll'}}>
+          <GridList cols={3} cellHeight={250} className={classes.gridList}>
             {data.map(tile => (
               <GridListTile key={tile.title}>
                 <img src={tile.url} alt={tile.title} />

@@ -5,6 +5,7 @@ import GridListTile from '@material-ui/core/GridListTile';
 import GridListTileBar from '@material-ui/core/GridListTileBar';
 import IconButton from '@material-ui/core/IconButton';
 import StarBorderIcon from '@material-ui/icons/StarBorder';
+import Link from '@material-ui/core/Link';
 import data  from '../dummyData';
 
 const useStyles = makeStyles(theme => ({
@@ -35,7 +36,12 @@ export default function SingleLineGridList() {
 
   return (
     <div className={classes.root}>
-      <GridList className={classes.gridList} cols={2.5} spacing={4} cellHeight={"auto"}>
+      <GridList 
+        component={linkProps => (<Link {...linkProps} href="/gallery" variant="button" /> )}
+        className={classes.gridList} 
+        cols={3} 
+        spacing={4} 
+        cellHeight={"auto"}>
         {data.map(tile => (
           <GridListTile key={tile.title}>
             <img src={tile.url} alt={tile.title} height='100%'/>
@@ -46,7 +52,8 @@ export default function SingleLineGridList() {
                 title: classes.title,
               }}
               actionIcon={
-                <IconButton aria-label={`star ${tile.title}`}>
+                <IconButton 
+                  aria-label={`star ${tile.title}`}>
                   <StarBorderIcon className={classes.title} />
                 </IconButton>
               }
