@@ -4,7 +4,6 @@ import AppBar from '../container/AppAppBar';
 import AppBarLogin from '../container/AppBarLogin';
 import { withStyles } from '@material-ui/core/styles';
 import Typography from '../component/Typography';
-
 import HorizontalLinearStepper from '../component/Stepper';
 
 const styles = theme => ({
@@ -39,6 +38,7 @@ class BookingPage extends React.Component{
                         Let's make a Booking
                     </Typography>
                     <HorizontalLinearStepper/>
+                    
                 </LayoutBody>
             </>
 

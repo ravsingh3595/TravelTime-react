@@ -5,6 +5,7 @@ import Step from '@material-ui/core/Step';
 import StepLabel from '@material-ui/core/StepLabel';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
+import Picker from '../component/Picker';
 import TextFieldComponent from '../component/TextFieldComponent';
 
 
@@ -59,7 +60,7 @@ export default function HorizontalLabelPositionBelowStepper() {
 
   return (
     <div className={classes.root}>
-      <Stepper activeStep={activeStep} alternativeLabel>
+      <Stepper activeStep={activeStep} alternativeLabel style={{backgroundColor: "#DBFFE5"}}>
         {steps.map(label => (
           <Step key={label}>
             <StepLabel>{label}</StepLabel>
@@ -74,11 +75,29 @@ export default function HorizontalLabelPositionBelowStepper() {
           </div>
         ) : (
           <div>
+
+            <section>
+              
+                <section>
+
+                  
+                </section>
+
+            </section>
+
+
+
+
+
+
+
+
+
+
+
             <Typography className={classes.instructions}>{getStepContent(activeStep)}</Typography>
-            <TextFieldComponent id="email" name="email" label="Email Address" type="email" autoComplete="email"/>
-            <TextFieldComponent id="email" name="email" label="Email Address" type="email" autoComplete="email"/>
-            <TextFieldComponent id="email" name="email" label="Email Address" type="email" autoComplete="email"/>
-            <TextFieldComponent id="email" name="email" label="Email Address" type="email" autoComplete="email"/>
+            <Picker/>
+
             <TextFieldComponent id="email" name="email" label="Email Address" type="email" autoComplete="email"/>
             <div>
               <Button
