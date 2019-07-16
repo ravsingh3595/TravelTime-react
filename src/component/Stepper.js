@@ -7,11 +7,12 @@ import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import Picker from '../component/Picker';
 import TextFieldComponent from '../component/TextFieldComponent';
+import { itineraryData } from '../dummyData.js';
 
 
 const useStyles = makeStyles(theme => ({
   root: {
-    width: '90%',
+    width: '100%',
   },
   backButton: {
     marginRight: theme.spacing(1),
@@ -21,6 +22,28 @@ const useStyles = makeStyles(theme => ({
     marginTop: theme.spacing(1),
     marginBottom: theme.spacing(1),
   },
+  article:{
+    display: 'flex',
+    flexDirection: 'row',
+    width: '100%'
+  },
+  aside1:{
+    padding: 30,
+    flex: 7,
+    borderRight: '6px solid black',
+  },
+  aside2:{
+    flex: 2,
+    padding: 30,
+    
+    
+  },
+  destination:{
+    border: '2px solid black',
+    padding: 20,
+
+  },
+
 }));
 
 function getSteps() {
@@ -76,11 +99,41 @@ export default function HorizontalLabelPositionBelowStepper() {
         ) : (
           <div>
 
-            <section>
-              
-                <section>
+            <section className={classes.article}>
+                <section className={classes.aside1}>
+                <Typography className={classes.instructions}>{getStepContent(activeStep)}</Typography>
+                  <Picker/>
 
+                  <TextFieldComponent id="email" name="email" label="Email Address" type="email" autoComplete="email"/>
+                  <div>
+                    <Button
+                      disabled={activeStep === 0}
+                      onClick={handleBack}
+                      className={classes.backButton}
+                    >
+                      Back
+                    </Button>
+                    <Button variant="contained" color="primary" onClick={handleNext}>
+                      {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
+                    </Button>
+                  </div>
                   
+                </section>
+
+                <section className={classes.aside2}>
+                
+                  <Typography variant="h4" align="center" component="h6" className={classes.heading}>
+                    Your Choosen Destination.
+                  </Typography>
+                  <div className={classes.destination}>
+                    <img src={itineraryData.tripImage} alt="Mountains" width="350" height="200"/>
+                    <Typography variant="h6" className={classes.heading}>
+                      Your Choosen Destination.
+                    </Typography>
+                    <Typography variant="subtitle1" component="h6" className={classes.heading}>
+                      Your Choosen Destination.
+                    </Typography>
+                  </div>
                 </section>
 
             </section>
@@ -95,22 +148,7 @@ export default function HorizontalLabelPositionBelowStepper() {
 
 
 
-            <Typography className={classes.instructions}>{getStepContent(activeStep)}</Typography>
-            <Picker/>
-
-            <TextFieldComponent id="email" name="email" label="Email Address" type="email" autoComplete="email"/>
-            <div>
-              <Button
-                disabled={activeStep === 0}
-                onClick={handleBack}
-                className={classes.backButton}
-              >
-                Back
-              </Button>
-              <Button variant="contained" color="primary" onClick={handleNext}>
-                {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
-              </Button>
-            </div>
+            
           </div>
         )}
       </div>
