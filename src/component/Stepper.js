@@ -5,10 +5,10 @@ import Step from '@material-ui/core/Step';
 import StepLabel from '@material-ui/core/StepLabel';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
-import Picker from '../component/Picker';
-import TextFieldComponent from '../component/TextFieldComponent';
 import { itineraryData } from '../dummyData.js';
 
+
+import GettingDetails from '../component/GettingDetails';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -53,7 +53,7 @@ function getSteps() {
 function getStepContent(stepIndex) {
   switch (stepIndex) {
     case 0:
-      return 'Enter all the information';
+      return <GettingDetails/>;
     case 1:
       return 'Please confirm the given information';
     case 2:
@@ -82,6 +82,7 @@ export default function HorizontalLabelPositionBelowStepper() {
   }
 
   return (
+    
     <div className={classes.root}>
       <Stepper activeStep={activeStep} alternativeLabel style={{backgroundColor: "#DBFFE5"}}>
         {steps.map(label => (
@@ -101,8 +102,10 @@ export default function HorizontalLabelPositionBelowStepper() {
 
             <section className={classes.article}>
                 <section className={classes.aside1}>
+
+                  
                 <Typography className={classes.instructions}>{getStepContent(activeStep)}</Typography>
-                  <Picker/>
+                  {/* <Picker/>
 
                   <TextFieldComponent id="email" name="email" label="Email Address" type="email" autoComplete="email"/>
                   <div>
@@ -117,8 +120,28 @@ export default function HorizontalLabelPositionBelowStepper() {
                       {activeStep === steps.length - 1 ? 'Finish' : 'Next'}
                     </Button>
                   </div>
-                  
+                   */}
+
+
+
+
+
+
+
+
+
                 </section>
+
+
+
+
+
+
+
+
+
+
+
 
                 <section className={classes.aside2}>
                 
@@ -128,10 +151,10 @@ export default function HorizontalLabelPositionBelowStepper() {
                   <div className={classes.destination}>
                     <img src={itineraryData.tripImage} alt="Mountains" width="350" height="200"/>
                     <Typography variant="h6" className={classes.heading}>
-                      Your Choosen Destination.
+                      {itineraryData.tripName}
                     </Typography>
                     <Typography variant="subtitle1" component="h6" className={classes.heading}>
-                      Your Choosen Destination.
+                      {itineraryData.tripHighLight}
                     </Typography>
                   </div>
                 </section>
