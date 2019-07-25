@@ -6,7 +6,7 @@ import StepLabel from '@material-ui/core/StepLabel';
 import Button from '@material-ui/core/Button';
 import Typography from '@material-ui/core/Typography';
 import { itineraryData } from '../dummyData.js';
-
+import fire from '../Firebase/Firebase';
 
 import GettingDetails from '../component/GettingDetails';
 
@@ -53,7 +53,13 @@ function getSteps() {
 function getStepContent(stepIndex) {
   switch (stepIndex) {
     case 0:
-      return <GettingDetails/>;
+      return (
+        <div>
+          {/* {this.setBookingId(shortid.generate())}
+          {ref.push(this.bookingId)} */}
+          <GettingDetails/>
+        </div>
+        );
     case 1:
       return 'Please confirm the given information';
     case 2:
@@ -66,6 +72,8 @@ function getStepContent(stepIndex) {
 export default function HorizontalLabelPositionBelowStepper() {
   const classes = useStyles();
   const [activeStep, setActiveStep] = React.useState(0);
+  // const [date, setDate] = React.useState(new Date());
+  // const [bookingId, setBookingId] = React.useState(0);
 
   const steps = getSteps();
 
@@ -103,7 +111,7 @@ export default function HorizontalLabelPositionBelowStepper() {
             <section className={classes.article}>
                 <section className={classes.aside1}>
 
-                  
+                
                 <Typography className={classes.instructions}>{getStepContent(activeStep)}</Typography>
                   {/* <Picker/>
 
