@@ -5,6 +5,7 @@ import { Typography, Button } from '@material-ui/core';
 import fire from '../Firebase/Firebase';
 import TextFieldComponent from '../component/TextFieldComponent';
 import shortid from 'shortid';
+import DateTimePicker from 'react-datetime-picker';
 
 const styles = theme => ({
   container:{
@@ -13,7 +14,14 @@ const styles = theme => ({
 });
 
 const database = fire.database();
-const ref = database.ref('booking');
+const ref = database.ref('bookingDetails');
+
+function generateBookingID(){
+    var data = {
+        bookingID: shortid.generate(),
+        date: new Date()
+    }
+}
 
 class GettingDetails extends React.Component {
         constructor(props){
@@ -48,6 +56,8 @@ class GettingDetails extends React.Component {
 
         return(
             <section className={classes.container}>
+                {generateBookingID()
+                }
                 <Typography>Enter all the Information</Typography>
                 <Picker/>
                 <form>
