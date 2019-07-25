@@ -48,6 +48,7 @@ class GettingDetails extends React.Component {
         saveDetails(event){
             this.setState({submittedTravellers : this.submittedTravellers +1});
             this.setState({bookingId: shortid.generate()})
+            
             ref.push(this.state);
             console.log(fire);
         }

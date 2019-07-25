@@ -33,10 +33,10 @@ class BookingPage extends React.Component{
         super(props);
         this.state = {
             isUserLoggedIn : true,
-            bookingId: shortid.generate(),
-            date: new Date(),
-            destinationID: shortid.generate(),
-            userId: shortid.generate(),
+            // bookingId: shortid.generate(),
+            // date: new Date(),
+            // destinationID: shortid.generate(),
+            // userId: shortid.generate(),
         }
         
     }
