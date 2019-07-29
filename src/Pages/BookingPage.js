@@ -58,10 +58,6 @@ class BookingPage extends React.Component{
         return(
             <>
                 <AppBarLogin/>                      {/* check if the user is login in or not  */}
-                {
-                    
-                    
-                }
                 <LayoutBody className={classes.layoutBody} width="xlarge">
                     <Typography variant="h3" align="center" component="h6" className={classes.heading}>
                         Let's make a Booking
