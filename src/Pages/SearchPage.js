@@ -1,9 +1,12 @@
 import React from 'react';
+import Proptypes from 'prop-types';
 import AppBar from '../container/AppAppBar.js';
 import { withStyles } from '@material-ui/core/styles';
 import Typography from '../component/Typography';
 import LayoutBody from '../component/LayoutBody';
+import SearchCard from '../component/searchcard';
 import Footer from '../container/Footer';
+import {searchData} from '../dummyData';
 
 const styles = theme => ({
   layoutBody: {
@@ -38,6 +41,15 @@ render(){
         <Typography variant="h3" align="center" component="h6" className={classes.heading}>
           Choose what suits you!
         </Typography>
+        {searchData.map(data => (
+            <SearchCard 
+              tripImage={data.tripImage} 
+              tripName={data.tripName} 
+              tripHighlight={data.tripHighLight}
+              />
+          ))}
+        
+        
       </LayoutBody>
       <Footer/>
 
@@ -45,4 +57,11 @@ render(){
     );
   }
 }
+
+// SearchPage.prototype = {
+//   tripName: Proptypes.string.isRequired,
+//   tripHighlight: Proptypes.string.isRequired,
+//   tripImage: Proptypes.string.isRequired,
+// }
+
 export default withStyles(styles)(SearchPage);

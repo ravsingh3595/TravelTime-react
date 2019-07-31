@@ -261,4 +261,62 @@ export const itineraryData = {
   ]
 }
 
+export const searchData = [
+  {
+    tripImage: "https://www.mountaintreksnepal.com/wp-content/uploads/2018/05/Everest-base-camp-luxury-trekking-1024x400.jpg",
+    tripName: "Tobermory",
+    tripHighLight: "Valley of hikes",
+  },
+  {
+    tripImage: "https://www.mountaintreksnepal.com/wp-content/uploads/2018/05/Everest-base-camp-luxury-trekking-1024x400.jpg",
+    tripName: "Tobermory",
+    tripHighLight: "Valley of hikes",
+  },
+  {
+    tripImage: "https://www.mountaintreksnepal.com/wp-content/uploads/2018/05/Everest-base-camp-luxury-trekking-1024x400.jpg",
+    tripName: "Tobermory",
+    tripHighLight: "Valley of hikes",
+  },
+  {
+    tripImage: "https://www.mountaintreksnepal.com/wp-content/uploads/2018/05/Everest-base-camp-luxury-trekking-1024x400.jpg",
+    tripName: "Tobermory",
+    tripHighLight: "Valley of hikes",
+  },
+  {
+    tripImage: "https://www.mountaintreksnepal.com/wp-content/uploads/2018/05/Everest-base-camp-luxury-trekking-1024x400.jpg",
+    tripName: "Tobermory",
+    tripHighLight: "Valley of hikes",
+  },
+  {
+    tripImage: "https://www.mountaintreksnepal.com/wp-content/uploads/2018/05/Everest-base-camp-luxury-trekking-1024x400.jpg",
+    tripName: "Tobermory",
+    tripHighLight: "Valley of hikes",
+  },
+  {
+    tripImage: "https://www.mountaintreksnepal.com/wp-content/uploads/2018/05/Everest-base-camp-luxury-trekking-1024x400.jpg",
+    tripName: "Tobermory",
+    tripHighLight: "Valley of hikes",
+  },
+  {
+    tripImage: "https://www.mountaintreksnepal.com/wp-content/uploads/2018/05/Everest-base-camp-luxury-trekking-1024x400.jpg",
+    tripName: "Tobermory",
+    tripHighLight: "Valley of hikes",
+  },
+  {
+    tripImage: "https://www.mountaintreksnepal.com/wp-content/uploads/2018/05/Everest-base-camp-luxury-trekking-1024x400.jpg",
+    tripName: "Tobermory",
+    tripHighLight: "Valley of hikes",
+  },
+  {
+    tripImage: "https://www.mountaintreksnepal.com/wp-content/uploads/2018/05/Everest-base-camp-luxury-trekking-1024x400.jpg",
+    tripName: "Tobermory",
+    tripHighLight: "Valley of hikes",
+  },
+  {
+    tripImage: "https://www.mountaintreksnepal.com/wp-content/uploads/2018/05/Everest-base-camp-luxury-trekking-1024x400.jpg",
+    tripName: "Tobermory",
+    tripHighLight: "Valley of hikes",
+  },
+]
+
 export default data;
