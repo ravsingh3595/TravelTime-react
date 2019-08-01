@@ -9,6 +9,7 @@ import { relative } from 'path';
 
 const styles = theme => ({
   box:{
+    // clear: 'left',
     display: 'relative',
     // justifyContent: 'center',
     // flexDirection: 'column',
