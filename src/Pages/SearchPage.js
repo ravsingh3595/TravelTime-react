@@ -7,6 +7,11 @@ import LayoutBody from '../component/LayoutBody';
 import SearchCard from '../component/searchcard';
 import Footer from '../container/Footer';
 import {searchData} from '../dummyData';
+import SearchIcon from '@material-ui/icons/Search';
+import InputBase from '@material-ui/core/InputBase';
+import { Button } from '@material-ui/core';
+import sortPicker from '../component/sortPicker'
+
 
 const styles = theme => ({
   layoutBody: {
@@ -20,6 +25,59 @@ const styles = theme => ({
       paddingBottom: 40,
       fontWeight: 'bold',
   },
+  search: {
+    position: 'relative',
+    border: '2px solid #5BA16F',
+    borderRadius: '10px',
+    width: '50%',
+    marginRight: '20px',
+    marginLeft: 0,
+    float: 'left',
+    // backgroundColor: (theme.palette.common.white, 0.15),
+    // '&:hover': {
+    //   backgroundColor: fade(theme.palette.common.white, 0.25),
+    // },   
+    [theme.breakpoints.up('sm')]: {
+      marginLeft: theme.spacing(3),
+      width: '50%',
+    },
+  },
+  searchButton:{
+    
+  },
+  searchCard:{
+    clear: 'left',
+  },
+  searchIcon: {
+    width: theme.spacing(7),
+    height: '100%',
+    position: 'absolute',
+    pointerEvents: 'none',
+    display: 'flex',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  inputRoot: {
+    color: 'inherit',
+    width: '100%',
+  },
+  inputInput: {
+    padding: theme.spacing(1, 1, 1, 7),
+    transition: theme.transitions.create('width'),
+    width: '100%',
+    [theme.breakpoints.up('md')]: {
+      width: 200,
+    },
+  },
+  sorting:{
+    clear: 'left',
+    display: 'flex',
+    padding: '30px 50px 50px 25px' 
+  },
+  sortHeading: {
+    color: "#5BA16F", 
+    fontWeight: 'bold',
+},
 });
 
 
@@ -41,15 +99,41 @@ render(){
         <Typography variant="h3" align="center" component="h6" className={classes.heading}>
           Choose what suits you!
         </Typography>
-        {searchData.map(data => (
-            <SearchCard 
-              tripImage={data.tripImage} 
-              tripName={data.tripName} 
-              tripHighlight={data.tripHighLight}
-              />
-          ))}
-        
-        
+
+        <div className={classes.search}>
+            <div className={classes.searchIcon}>
+              <SearchIcon />
+            </div>
+            <InputBase
+              placeholder="Search…"
+              classes={{
+                root: classes.inputRoot,
+                input: classes.inputInput,
+              }}
+              inputProps={{ 'aria-label': 'search' }}
+            />
+          </div>
+          <div className={classes.searchButton}>
+            <Button variant="outlined">
+              Search Destination
+            </Button>
+          </div>
+          <div className={classes.sorting}>
+            <Typography variant="h6" align="left" className={classes.sortHeading}>
+              Sort your destination by: 
+            </Typography>
+            <sortPicker/>
+          </div>
+
+          <div className={classes.searchCard}>
+            {searchData.map(data => (
+              <SearchCard 
+                tripImage={data.tripImage} 
+                tripName={data.tripName} 
+                tripHighlight={data.tripHighLight}
+                />
+            ))}
+          </div>
       </LayoutBody>
       <Footer/>
 
