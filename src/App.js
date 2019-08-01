@@ -1,13 +1,11 @@
-import React from 'react';
-
-import PropTypes from 'prop-types';
-import Home from './Pages/Home';
-import LoginPage from './Pages/Login';
-import fire from './Firebase/Firebase';
-import { MuiThemeProvider } from '@material-ui/core/styles';
-import rawTheme from './theme'
+import React from "react";
+import PropTypes from "prop-types";
+import Home from "./Pages/Home";
+import LoginPage from "./Pages/Login";
+import fire from "./Firebase/Firebase";
+import { MuiThemeProvider } from "@material-ui/core/styles";
+import rawTheme from "./theme";
 class App extends React.Component {
-
   constructor(props) {
     super(props);
     this.state = {
@@ -22,38 +20,39 @@ class App extends React.Component {
   }
 
   authListener() {
-    fire.auth().onAuthStateChanged((user) => {
+    fire.auth().onAuthStateChanged(user => {
       console.log(user);
       if (user) {
         this.setState({ email: user.email, isUserLoggedIn: true });
-        console.log(this.state.email)
+        console.log(this.state.email);
         // localStorage.setItem('user', user.uid);
       } else {
         this.setState({ email: null });
-        console.log(this.state.email)
+        console.log(this.state.email);
         // localStorage.removeItem('user');
       }
     });
   }
 
-  render(){
+  render() {
     console.log(this.state.isUserLoggedIn);
-    const {isUserLoggedIn} = this.state;
-    return(
-     <MuiThemeProvider theme={rawTheme}>
-      <React.Fragment>
-        {this.state.email ? ( <Home isUserLoggedIn={isUserLoggedIn}/> ) : (<LoginPage history={this.props.history}  />)}
-      </React.Fragment>
+    const { isUserLoggedIn } = this.state;
+    return (
+      <MuiThemeProvider theme={rawTheme}>
+        <React.Fragment>
+          {this.state.email ? (
+            <Home isUserLoggedIn={isUserLoggedIn} />
+          ) : (
+            <LoginPage history={this.props.history} />
+          )}
+        </React.Fragment>
       </MuiThemeProvider>
-      
-    )
+    );
   }
 }
 
 App.propTypes = {
-  
   history: PropTypes.object.isRequired
-
-}
+};
 
 export default App;

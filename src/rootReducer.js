@@ -1,9 +1,9 @@
-import { combineReducers } from 'redux';
+import { combineReducers } from "redux";
 
-import alertMessages from './Reducers/AlertMessage';
-// import auth from './reducers/auth';
+import alertMessages from "./Reducers/AlertMessage";
+import bookingInfo from "./Reducers/BookingInfo";
 
 export default combineReducers({
   alertMessages,
-  
+  bookingInfo
 });
