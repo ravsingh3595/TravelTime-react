@@ -6,6 +6,7 @@ import StepLabel from "@material-ui/core/StepLabel";
 import Button from "@material-ui/core/Button";
 import Typography from "@material-ui/core/Typography";
 import { itineraryData } from "../dummyData.js";
+import ConfirmDetails from '../container/ConfirmDetails';
 import fire from "../Firebase/Firebase";
 
 import GettingDetails from "../component/GettingDetails";
@@ -61,7 +62,7 @@ function getStepContent(stepIndex, isNextClicked) {
         </div>
       );
     case 1:
-      return "Please confirm the given information";
+      return <ConfirmDetails/>;
     case 2:
       return "Pay and its all done";
     default:

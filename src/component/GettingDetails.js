@@ -108,6 +108,7 @@ class GettingDetails extends React.Component {
           setToDate={this.props.setToDate}
         />
 
+
         {/* <Button
           type="submit"
           variant="contained"
@@ -127,6 +128,7 @@ class GettingDetails extends React.Component {
                     Back
                     </Button>
                     */}
+
         <div />
       </section>
     );
