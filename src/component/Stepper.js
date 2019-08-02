@@ -29,7 +29,7 @@ const useStyles = makeStyles(theme => ({
   },
   aside1: {
     padding: 30,
-    flex: 7,
+    flex: 5,
     borderRight: "6px solid black"
   },
   aside2: {
@@ -122,13 +122,13 @@ export default function HorizontalLabelPositionBelowStepper() {
                 </Typography>
 
                 <div>
-                  <Button
+                  {/* <Button
                     disabled={activeStep === 0}
                     onClick={handleBack}
                     className={classes.backButton}
                   >
                     Back
-                  </Button>
+                  </Button> */}
                   <Button
                     variant="contained"
                     color="primary"

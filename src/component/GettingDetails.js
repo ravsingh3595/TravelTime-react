@@ -108,7 +108,7 @@ class GettingDetails extends React.Component {
           setToDate={this.props.setToDate}
         />
 
-        <Button
+        {/* <Button
           type="submit"
           variant="contained"
           color="primary"
@@ -117,7 +117,7 @@ class GettingDetails extends React.Component {
           {this.numberOfTravellers === this.submittedTravellers
             ? "Press Confirm Information"
             : "Next"}
-        </Button>
+        </Button> */}
 
         {/* <Button
                     disabled={numberOfTravellers === 0}

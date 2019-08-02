@@ -9,7 +9,7 @@ import Footer from '../container/Footer';
 import {searchData} from '../dummyData';
 import SearchIcon from '@material-ui/icons/Search';
 import InputBase from '@material-ui/core/InputBase';
-import { Button } from '@material-ui/core';
+import { Button, Grid } from '@material-ui/core';
 import sortPicker from '../component/sortPicker'
 
 
@@ -77,7 +77,13 @@ const styles = theme => ({
   sortHeading: {
     color: "#5BA16F", 
     fontWeight: 'bold',
-},
+  },
+  gridContainer:{
+
+  },
+  gridItem:{
+
+  }
 });
 
 
@@ -134,6 +140,27 @@ render(){
                 />
             ))}
           </div>
+
+          {/* <Grid container
+                direction="column"
+                justify="space-around"
+                alignItems="center">
+            <Grid item  >
+              {searchData.map(data => (
+                // <div className={classes.gridItem}>
+                <Grid container item xs={12} spacing={3}>
+                   <SearchCard 
+                    tripImage={data.tripImage} 
+                    tripName={data.tripName} 
+                    tripHighlight={data.tripHighLight}
+                    />
+                </Grid>
+                 
+                // </div>
+              ))}
+            </Grid>
+          </Grid> */}
+          
       </LayoutBody>
       <Footer/>
 

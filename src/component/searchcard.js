@@ -5,12 +5,13 @@ import Typography from '../component/Typography';
 import { ButtonGroup } from '@material-ui/core';
 import Grid from '@material-ui/core/Grid';
 import { Button } from '@material-ui/core';
-import { relative } from 'path';
+import Link from '@material-ui/core/Link';
 
 const styles = theme => ({
   box:{
+    paddingLeft: '100px'
     // clear: 'left',
-    display: 'relative',
+    // display: 'relative',
     // justifyContent: 'center',
     // flexDirection: 'column',
     
@@ -21,6 +22,9 @@ const styles = theme => ({
     width: '25%',
     border: '2px solid #5BA16F',
     padding: '10px',
+  },
+  button:{
+
   },
 
 });
@@ -53,9 +57,12 @@ render(){
           </Typography>
           <Grid item xs={12}>
             <ButtonGroup fullWidth aria-label="full width outlined button group">
-              <Button>Explore</Button>
-              <Button>Book Now!</Button>
-              
+              <Button className={classes.button} variant="contained" color="primary" 
+                component={linkProps => (<Link {...linkProps} href="/itinerary" variant="button" /> )}
+                > Explore </Button>
+              <Button className={classes.button} variant="contained" color="primary" 
+                component={linkProps => (<Link {...linkProps} href="/booking" variant="button" /> )}
+              > Book now! </Button>
             </ButtonGroup>
           </Grid>
         </div>
