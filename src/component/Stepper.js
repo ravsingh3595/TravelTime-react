@@ -30,7 +30,7 @@ const useStyles = makeStyles(theme => ({
   },
   aside1: {
     padding: 30,
-    flex: 7,
+    flex: 5,
     borderRight: "6px solid black"
   },
   aside2: {

@@ -108,7 +108,27 @@ class GettingDetails extends React.Component {
           setToDate={this.props.setToDate}
         />
 
-      
+
+        {/* <Button
+          type="submit"
+          variant="contained"
+          color="primary"
+          onClick={this.saveDetails}
+        >
+          {this.numberOfTravellers === this.submittedTravellers
+            ? "Press Confirm Information"
+            : "Next"}
+        </Button> */}
+
+        {/* <Button
+                    disabled={numberOfTravellers === 0}
+                    onClick={saveDetails}
+                    className={classes.backButton}
+                    >
+                    Back
+                    </Button>
+                    */}
+
         <div />
       </section>
     );

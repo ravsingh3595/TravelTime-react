@@ -16,7 +16,7 @@ const useStyles = makeStyles(theme => ({
   },
   formControl: {
     margin: theme.spacing(1),
-    width: "20%",
+    width: "45%",
     minWidth: 120
   }
 }));
@@ -42,9 +42,9 @@ function Picker(props) {
   function contactUs() {}
   return (
     <form autoComplete="off">
-      <Button className={classes.button} onClick={handleOpen}>
+      {/* <Button className={classes.button} onClick={handleOpen}>
         Enter Number of travellers
-      </Button>
+      </Button> */}
       <FormControl className={classes.formControl}>
         <InputLabel htmlFor="demo-controlled-open-select">
           Number of travellers
