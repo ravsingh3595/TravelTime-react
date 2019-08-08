@@ -1,6 +1,7 @@
 import React from "react";
 import { makeStyles } from "@material-ui/core/styles";
 import { connect } from "react-redux";
+import { Typography } from "@material-ui/core";
 
 const useStyles = makeStyles(theme => ({
    
@@ -12,6 +13,9 @@ function ConfirmDetails(props) {
 
   return (
     <div>
+      <Typography>
+        
+      </Typography>
         <h3>Please comfirm to procced</h3>
         <h6>Number of travellers : {props.bookingInfo.numOfTravellers}</h6>
         <h6>Email : {props.bookingInfo.email}</h6>
