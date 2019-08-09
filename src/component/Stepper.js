@@ -12,6 +12,7 @@ import fire from "../Firebase/Firebase";
 import GettingDetails from "../component/GettingDetails";
 import ConfirmDetails from '../container/ConfirmDetails';
 import Payment from '../container/Payment';
+import Confirmation from '../Pages/Confirmation';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -68,7 +69,7 @@ function getStepContent(stepIndex, isNextClicked) {
     case 2:
       return <Payment/>;
     default:
-      return "Unknown stepIndex";
+      return <Confirmation/>;
   }
 }
 
