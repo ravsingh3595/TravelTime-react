@@ -19,7 +19,7 @@ class Payment extends React.Component{
                 <Typography>
                     Pay and its all Done!
                 </Typography>
-                <form>
+                <form onSubmit={this.onSubmit}>
                     <label> Enter Card Holder Name</label>
                     <input type="text"></input><br/>
                     <label> Enter 16 Digit Card Number</label>
