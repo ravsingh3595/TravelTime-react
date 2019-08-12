@@ -15,11 +15,8 @@
     "axios": "^0.18.1",
     "body-parser": "^1.19.0",
     "classnames": "^2.2.6",
-
     "date-fns": "^1.30.1",
-
     "dotenv": "^8.0.0",
-
     "express": "^4.17.1",
     "firebase": "^6.1.1",
     "google-maps-react": "^2.0.2",
@@ -38,14 +35,17 @@
     "react-star-ratings": "^2.3.0",
     "redux": "^4.0.1",
     "redux-thunk": "^2.3.0",
+    "serve": "^11.1.0",
     "shortid": "^2.2.14",
     "validator": "^11.0.0"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "dev": "react-scripts start",
+    "start": "serve -s build",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "heroku-postbuild": "npm run build"
   },
   "eslintConfig": {
     "extends": "react-app"
