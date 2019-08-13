@@ -98,6 +98,7 @@ class GettingDetails extends React.Component {
           onBlur={this.handleContactBlur}
         />
 
+
         {travellers.map(val => {
           return (
             <TravellerForm val={val} setFullName={this.props.setFullName} />
