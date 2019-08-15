@@ -95,7 +95,6 @@ export default function HorizontalLabelPositionBelowStepper() {
     setActiveStep(0);
   }
 
-  console.log("PAPAPA", isNextClicked);
   return (
     <div className={classes.root}>
       <Stepper
