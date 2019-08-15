@@ -35,6 +35,10 @@ const styles = theme => ({
 });
 
 class AppBarLogin extends React.Component{
+
+  openProfile(){
+
+  }
     
     render(){
         const { classes } = this.props;
@@ -52,15 +56,24 @@ class AppBarLogin extends React.Component{
                 >
                     {'TravelTime'}
                 </Link>
+                
                 <div className={classes.right}>
-                    <Link
+                  <Link
+                    variant="h6"
+                    underline="none"
+                    className={classNames(classes.rightLink)}
+                    href="/profile"
+                    >
+                    {'PROFILE'}
+                  </Link>
+                  <Link
                     variant="h6"
                     underline="none"
                     className={classNames(classes.rightLink)}
                     href="/"
                     onClick={this.props.triggerParentUpdate}>
                     {'LOGOUT'}
-                    </Link>
+                  </Link>
                 </div>
                 </Toolbar>
             </AppBar>
