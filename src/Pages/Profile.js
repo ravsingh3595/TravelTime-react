@@ -36,6 +36,13 @@ const styles = theme =>({
 
 class Profile extends Component {
 
+  constructor(props){
+    super(props);
+    this.state = {
+        isUserLoginIn: true,
+    }
+  }
+
 changeProfile(){
   console.log("CHnage DP");
   
@@ -44,6 +51,7 @@ changeProfile(){
 
   render() {
     const {classes} = this.props;
+    
     return (
       <div>
         <AppBar/>
