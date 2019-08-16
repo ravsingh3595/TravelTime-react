@@ -12,20 +12,23 @@ import Itinerary from '../Pages/Itinerary';
 import Profile from "../Pages/Profile";
 import BookingPage from "../Pages/BookingPage";
 import GalleryPage from '../Pages/GalleryPage';
+import EnsureLoggedInContainer from '../Routes/EnsureLoggedInContainer'
 
 export const  Router = () => {
   return( 
   <BrowserRouter>
-    <div>
       <Route exact={true} path="/" component={App}/>
       <Route path="/signup" component={SignupPage} />
       <Route path="/login" component={LoginPage} />
       <Route path="/itinerary" component={Itinerary} />
-      <Route path="/booking" component={BookingPage}/>
-      <Route path = "/profile" component = {Profile} />
       <Route path = "/gallery" component = {GalleryPage} />
       <Route path = "/searchPage" component = {SearchPage} />
-    </div>
+
+      <Route component={EnsureLoggedInContainer}>
+        <Route path="/booking" component={BookingPage}/>
+        <Route path = "/profile" component = {Profile} />
+      </Route>
+      
   </BrowserRouter>
   )
 }
