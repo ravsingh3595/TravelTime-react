@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Paper from "@material-ui/core/Paper";
 import { profileData } from "../dummyData";
+import { connect } from "react-redux";
 import ReviewCard from "../component/ReviewCard"
 import { withStyles, Typography } from "@material-ui/core";
 
@@ -46,6 +47,18 @@ class Profile extends Component {
 changeProfile(){
   console.log("CHnage DP");
   
+}
+
+componentDidUpdate(prevProps) {
+  const { dispatch, redirectUrl } = this.props
+  const isLoggingOut = prevProps.isLoggedIn && !this.props.isLoggedIn
+  const isLoggingIn = !prevProps.isLoggedIn && this.props.isLoggedIn
+
+  if (isLoggingIn) {
+    // dispatch(navigateTo(redirectUrl))
+  } else if (isLoggingOut) {
+    // do any kind of cleanup or post-logout redirection here
+  }
 }
 
 
@@ -98,4 +111,24 @@ changeProfile(){
   }
 }
 
-export default withStyles(styles)(Profile);
+// function mapStateToProps(state) {
+//   return {
+//     isLoggedIn: state.loggedIn,
+//     redirectUrl: state.redirectUrl
+//   }
+//   }
+
+export default withStyles(styles)
+  // x
+  (Profile);
+
+
+
+
+
+
+// render() {
+//   return this.props.children
+// }
+// }
+

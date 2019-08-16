@@ -3,7 +3,7 @@ import {
     CURRENT_URL
   } from "../Actions/types";
   
-  export default (state = {}, action = {}) => {
+  export default (state = [], action = {}) => {
     console.log("action", action.type);
     switch (action.type) {
       case IS_LOGGED_IN:

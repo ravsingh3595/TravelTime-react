@@ -5,6 +5,8 @@ import TextField from '@material-ui/core/TextField';
 import Typography from '../component/Typography';
 import Button from '../component/Button';
 import Image from '../assest/travel-world.jpg';
+import {setUserLoggedIn, setCurrentURL} from '../Actions/IsLoggedInAction';
+import { connect } from "react-redux";
 // import validateInput from '../Actions/Validations/Login';
 import AppBar from '../container/AppAppBar.js';
 import fire from '../Firebase/Firebase';
@@ -98,7 +100,8 @@ class Login extends React.Component {
         e.preventDefault();
         fire.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
         .then((u)=>{
-
+            this.props.setUserLoggedIn(true);
+            this.props.setCurrentURL('/booking');
             this.props.history.push('/');
         }).catch((errorFromLogin) => {
             this.setState({errors: errorFromLogin})
@@ -224,6 +227,12 @@ class Login extends React.Component {
 //     classes: PropTypes.object.isRequired,
 // };
     
-export default withStyles(styles)(Login);
+
+export default withStyles(styles)(
+    connect(
+        null,
+        {setUserLoggedIn, setCurrentURL}
+    )(Login)
+);
           
 

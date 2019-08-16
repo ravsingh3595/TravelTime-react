@@ -122,13 +122,13 @@ class GettingDetails extends React.Component {
         </Button> */}
 
         {/* <Button
-                    disabled={numberOfTravellers === 0}
-                    onClick={saveDetails}
-                    className={classes.backButton}
-                    >
-                    Back
-                    </Button>
-                    */}
+              disabled={numberOfTravellers === 0}
+              onClick={saveDetails}
+              className={classes.backButton}
+              >
+              Back
+              </Button>
+              */}
 
         <div />
       </section>

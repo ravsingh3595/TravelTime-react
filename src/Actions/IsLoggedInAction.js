@@ -8,9 +8,9 @@ import {
       payload: value
     };
   }
-  export function setCurrentURL(value, index) {
+  export function setCurrentURL(value) {
     return {
       type: CURRENT_URL,
-      payload: { value, index }
+      payload: value
     };
   }
