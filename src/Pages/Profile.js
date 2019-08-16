@@ -4,20 +4,21 @@ import { profileData } from "../dummyData";
 import { connect } from "react-redux";
 import ReviewCard from "../component/ReviewCard"
 import { withStyles, Typography } from "@material-ui/core";
+import ProfileNavBar  from "../container/ProfileNavBar";
+import ImageUploader from 'react-images-upload';
 
 import AppBar from '../container/AppBarLogin';
 
 const styles = theme =>({
   container: {
-    padding: '20px',
     display: "flex",
     alignItems: "center",
-    justifyContent: "center"
+    justifyContent: "center",
+    backgroundColor: "#DBFEE6",
   },
   paper: {
     width: '100%',
     maxWidth: '1160px',
-    padding: "30px",
     margin: "20px",
     display: "flex",
     alignItems: "center",
@@ -41,11 +42,16 @@ class Profile extends Component {
     super(props);
     this.state = {
         isUserLoginIn: true,
+        profileImage: []
     }
+    this.changeProfile = this.changeProfile.bind(this);
   }
 
-changeProfile(){
+changeProfile(picture){
   console.log("CHnage DP");
+  this.setState({
+    profileImage: this.state.profileImage.concat(picture),
+});
   
 }
 
@@ -69,8 +75,9 @@ componentDidUpdate(prevProps) {
       <div>
         <AppBar/>
         <div className={classes.container}>
-          <Paper className={classes.paper} >
+          <Paper className={classes.paper} style={{padding:"30px 0px"}}>
             <div className={classes.profileImage} onClick={this.changeProfile}/>
+            
             <div>
               <Typography variant='h4'>
                 {profileData.firstname + " " + profileData.lastname}
@@ -82,14 +89,10 @@ componentDidUpdate(prevProps) {
           </Paper>
         </div>
 
-        <div className={classes.container} style={{flexDirection: 'row', maxWidth: "1160px",}}>
-          <Paper  >
-            <h1>hello1</h1>
-          </Paper>
-          <Paper  >
-          <h1>hello2</h1>
-          </Paper>
-
+        <div className={classes.container} >
+          <div className={classes.paper}>
+            <ProfileNavBar/>
+          </div>
         </div>
        
 
@@ -119,7 +122,7 @@ componentDidUpdate(prevProps) {
 //   }
 
 export default withStyles(styles)
-  // x
+  // connect(mapStateToProps)
   (Profile);
 
 
