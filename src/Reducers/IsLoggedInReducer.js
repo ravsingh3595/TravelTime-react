@@ -1,6 +1,7 @@
 import {
     IS_LOGGED_IN,
-    CURRENT_URL
+    CURRENT_URL,
+    EMAIL_FOR_LOGGED_USER
   } from "../Actions/types";
   
   export default (state = [], action = {}) => {
@@ -13,6 +14,12 @@ import {
         };
   
       case CURRENT_URL:
+        return {
+          ...state,
+          currentURL: action.payload
+        };
+
+      case EMAIL_FOR_LOGGED_USER:
         return {
           ...state,
           currentURL: action.payload

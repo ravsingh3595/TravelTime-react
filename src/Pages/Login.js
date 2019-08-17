@@ -5,7 +5,7 @@ import TextField from '@material-ui/core/TextField';
 import Typography from '../component/Typography';
 import Button from '../component/Button';
 import Image from '../assest/travel-world.jpg';
-import {setUserLoggedIn, setCurrentURL} from '../Actions/IsLoggedInAction';
+import {setUserLoggedIn, setCurrentURL, setEmailForLoggedUser} from '../Actions/IsLoggedInAction';
 import { connect } from "react-redux";
 // import validateInput from '../Actions/Validations/Login';
 import AppBar from '../container/AppAppBar.js';
@@ -84,7 +84,6 @@ class Login extends React.Component {
     }
 
     onChange(event) {
-        console.log(event.target.value);
         this.setState({ [event.target.name]: event.target.value });
     }
 
@@ -99,9 +98,10 @@ class Login extends React.Component {
     onSubmit(e){
         e.preventDefault();
         fire.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
-        .then((u)=>{
+        .then((loginInfo)=>{
             this.props.setUserLoggedIn(true);
             this.props.setCurrentURL('/booking');
+            this.props.setEmailForLoggedUser(this.state.email);
             this.props.history.push('/');
         }).catch((errorFromLogin) => {
             this.setState({errors: errorFromLogin})
@@ -231,7 +231,7 @@ class Login extends React.Component {
 export default withStyles(styles)(
     connect(
         null,
-        {setUserLoggedIn, setCurrentURL}
+        {setUserLoggedIn, setCurrentURL, setEmailForLoggedUser}
     )(Login)
 );
           
