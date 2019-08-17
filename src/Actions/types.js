@@ -8,3 +8,4 @@ export const SET_EMAIL = "SET_EMAIL";
 export const SET_CONTACT_NUM = "SET_CONTACT_NUM";
 export const IS_LOGGED_IN = "IS_LOGGED_IN";
 export const CURRENT_URL = "CURRENT_URL";
+export const EMAIL_FOR_LOGGED_USER = "EMAIL_FOR_LOGGED_USER"; 
