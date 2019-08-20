@@ -1,7 +1,7 @@
 import React,{Component} from 'react';
 import ItineraryHeader from '../container/ItineraryHeader';
 import ItineraryDescription from '../container/ItineraryDescription';
-import AppBar from '../container/AppAppBar';
+import AppBar from '../container/AppBarLogin';
 
 class Itinerary extends Component {
    constructor(props){

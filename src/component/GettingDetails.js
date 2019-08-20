@@ -36,12 +36,8 @@ class GettingDetails extends React.Component {
     super(props);
     this.state = {
       numberOfTravellers: 0,
-      submittedTravellers: 0,
-      firstName: "",
-      lastName: "",
       email: "",
-      contactNumber: "",
-      bookingId: ""
+      bookingId: "",
     };
     this.onChange = this.onChange.bind(this);
     this.saveDetails = this.saveDetails.bind(this);
@@ -138,7 +134,8 @@ class GettingDetails extends React.Component {
 
 function mapStateToProps(state) {
   return {
-    numOfTravellers: state.bookingInfo.numOfTravellers
+    numOfTravellers: state.bookingInfo.numOfTravellers,
+    emailForLoggedUser: state.emailForLoggedUser
   };
 }
 export default withStyles(styles)(

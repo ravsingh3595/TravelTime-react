@@ -7,6 +7,10 @@ import AppBarLogin from "../container/AppBarLogin";
 import Footer from "../container/Footer";
 import ThumbUp from "@material-ui/icons/ThumbUp";
 
+import { connect } from 'react-redux';
+import shortid from "shortid";
+import fire from "../Firebase/Firebase";
+
 const styles = theme => ({
   layoutBody: {
     backgroundColor: "#DBFFE5",
@@ -41,6 +45,11 @@ const styles = theme => ({
   }
 });
 
+var data;
+
+var ref = fire.database().ref("bookingDetails");
+
+
 class Confirmation extends React.Component {
 
     constructor(props){
@@ -51,6 +60,19 @@ class Confirmation extends React.Component {
     handleClick(){
         this.props.history.push('/')
     }
+
+    componentWillMount(){
+        ref.on("value", function(snapshot) {
+            snapshot.forEach(function(childSnapshot) {
+            var allData = childSnapshot.val();
+            if(allData.email === "ravneets47@gmail.com"){
+                data = allData
+            }
+             console.log(data.email);
+            });
+           });
+    }
+    
   render() {
     const { classes } = this.props;
     return (
@@ -72,12 +94,12 @@ class Confirmation extends React.Component {
           </div>
           <br />
           <Typography variant="h6" align="center" component="h6">
-            Your payment for successful
+            Your payment was successful
           </Typography>
 
           <div className={classes.wrapper}>
             <Typography variant="h6" align="center" component="h6">
-              Confirmation ID : 1299GHGG43
+              Confirmation ID : {shortid.generate()}
             </Typography>
           </div>
           <div className={classes.wrapper}>
@@ -87,27 +109,26 @@ class Confirmation extends React.Component {
               </Typography>
 
               <Typography variant="subtitle1" component="h6">
-                Booking Details :
+                Booking Status : Confirmed
               </Typography>
               <Typography variant="subtitle1" component="h6">
                 Destination : Tobermory
               </Typography>
               <Typography variant="subtitle1" component="h6">
-                Number of Travellers : 3
+                Number of Travellers : 2
               </Typography>
 
               <Typography variant="subtitle1" component="h6">
-                Confirmation Email : ravs47@gmail.com
+                Confirmation Email : ravneets47@gmail.com
               </Typography>
 
               <Typography variant="subtitle1" component="h6">
-                Contact Number : 446 889-9115
+                Contact Number : +918447555925
               </Typography>
               <br />
               <br />
               <Typography variant="subtitle2" align="center">
-                For cancellations and other queries please contact (1877)
-                432-7778
+                For cancellations and other queries please contact (1877) 432-7778
               </Typography>
             </div>
             <br />
@@ -115,7 +136,7 @@ class Confirmation extends React.Component {
           <div className={classes.wrapper}>
           <Typography variant="subtitle2" align="center">
               <a onClick = {this.handleClick}> Go to Home</a>
-              </Typography>
+          </Typography>
            
           </div>
         </LayoutBody>
@@ -125,4 +146,11 @@ class Confirmation extends React.Component {
   }
 }
 
-export default withStyles(styles)(Confirmation);
+function mapStateToProps(state) {
+    return {
+      emailForLoggedUser: state.emailForLoggedUser
+    };
+  }
+  
+  export default withStyles(styles)
+    (connect(mapStateToProps,{ })(Confirmation));

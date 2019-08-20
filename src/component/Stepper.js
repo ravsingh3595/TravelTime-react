@@ -14,6 +14,8 @@ import ConfirmDetails from '../container/ConfirmDetails';
 import Payment from '../container/Payment';
 import Confirmation from '../Pages/Confirmation';
 
+import { connect } from 'react-redux';
+
 const useStyles = makeStyles(theme => ({
   root: {
     width: "100%"
@@ -46,6 +48,9 @@ const useStyles = makeStyles(theme => ({
   }
 }));
 
+const database = fire.database();
+const ref = database.ref("bookingDetails");
+
 function getSteps() {
   return [
     "Provide all the information of the travellers",
@@ -69,32 +74,26 @@ function getStepContent(stepIndex, isNextClicked) {
     case 2:
       return <Payment/>;
     default:
-      console.log("Confirmation page")
       return <Confirmation/>;
   }
 }
 
-export default function HorizontalLabelPositionBelowStepper(props) {
+function HorizontalLabelPositionBelowStepper(props) {
   const classes = useStyles();
   const [activeStep, setActiveStep] = React.useState(0);
   const [isNextClicked, setisNextClicked] = React.useState(false);
-  // const [date, setDate] = React.useState(new Date());
-  // const [bookingId, setBookingId] = React.useState(0);
-
   const steps = getSteps();
-
 
   React.useEffect(()=>{
     if(activeStep === 3)
     {
+      ref.push(props.bookingInfo);
       props.history.push('/confirmation');
+      
     }
   }) 
   function handleNext() {
     setActiveStep(prevActiveStep => prevActiveStep + 1);
-    // if(prevActiveStep > 2){
-    //   this.props.history.push('/confirmation');
-    // }
     setisNextClicked(true);
   }
 
@@ -181,3 +180,12 @@ export default function HorizontalLabelPositionBelowStepper(props) {
     </div>
   );
 }
+
+function mapStateToProps(state) {
+  return {
+    bookingInfo: state.bookingInfo,
+    emailForLoggedUser: state.emailForLoggedUser
+  };
+}
+
+export default connect(mapStateToProps,{ })(HorizontalLabelPositionBelowStepper);
