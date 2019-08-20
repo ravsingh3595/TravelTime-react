@@ -11,7 +11,7 @@ import Divider from '@material-ui/core/Divider';
 import { itineraryData } from '../dummyData';
 import { MdLocationOn, MdShoppingCart } from "react-icons/md";
 import { FaUtensils, FaHiking } from "react-icons/fa";
-// import MapContainer from '../component/MapContainer';
+import MapContainer from '../component/MapContainer';
 import SingleLineGridList from '../component/Gallery';
 import "./Values.css";
 
@@ -287,7 +287,7 @@ class ItineraryDescription extends Component {
                         Find your destination on Map
                     </Typography>
                     <div className="mapContainer">
-                        {/* <MapContainer />     */}
+                        <MapContainer />    
                     </div> 
                 </section>
                 {/* <section className={classes.item}>Reviews/blog</section>

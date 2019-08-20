@@ -85,11 +85,8 @@ export default function ScrollableTabsButtonForce() {
           className={classes.tabContainer}
         >
           <Tab label="Personal Details" icon={<PersonPinIcon />} {...a11yProps(0)} />
-          <Tab label="Trip History" icon={<History />} {...a11yProps(1)} />
-          <Tab label="Favorite Trips " icon={<FavoriteIcon />} {...a11yProps(2)} />
           <Tab label="Blogs" icon={<InsertComment />} {...a11yProps(3)} />
           <Tab label="Reviews" icon={<RateReview />} {...a11yProps(4)} />
-          <Tab label="Rating" icon={<ThumbUp />} {...a11yProps(5)} />
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>

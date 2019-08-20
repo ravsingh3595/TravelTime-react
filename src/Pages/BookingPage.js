@@ -6,6 +6,8 @@ import { withStyles } from '@material-ui/core/styles';
 import Typography from '../component/Typography';
 import HorizontalLinearStepper from '../component/Stepper';
 import shortid from 'shortid';
+
+import Footer from '../container/Footer'
 // import DateTimePicker from 'react-datetime-picker';
 
 import fire from '../Firebase/Firebase';
@@ -62,9 +64,10 @@ class BookingPage extends React.Component{
                     <Typography variant="h3" align="center" component="h6" className={classes.heading}>
                         Let's make a Booking
                     </Typography>
-                    <HorizontalLinearStepper/>
+                    <HorizontalLinearStepper history = {this.props.history}/>
                     
                 </LayoutBody>
+                <Footer/>
             </>
 
             
