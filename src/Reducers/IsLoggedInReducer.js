@@ -22,7 +22,7 @@ import {
       case EMAIL_FOR_LOGGED_USER:
         return {
           ...state,
-          currentURL: action.payload
+          emailForLoggedUser: action.payload
         };
   
       default:

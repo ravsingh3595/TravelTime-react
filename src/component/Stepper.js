@@ -69,11 +69,12 @@ function getStepContent(stepIndex, isNextClicked) {
     case 2:
       return <Payment/>;
     default:
+      console.log("Confirmation page")
       return <Confirmation/>;
   }
 }
 
-export default function HorizontalLabelPositionBelowStepper() {
+export default function HorizontalLabelPositionBelowStepper(props) {
   const classes = useStyles();
   const [activeStep, setActiveStep] = React.useState(0);
   const [isNextClicked, setisNextClicked] = React.useState(false);
@@ -82,8 +83,18 @@ export default function HorizontalLabelPositionBelowStepper() {
 
   const steps = getSteps();
 
+
+  React.useEffect(()=>{
+    if(activeStep === 3)
+    {
+      props.history.push('/confirmation');
+    }
+  }) 
   function handleNext() {
     setActiveStep(prevActiveStep => prevActiveStep + 1);
+    // if(prevActiveStep > 2){
+    //   this.props.history.push('/confirmation');
+    // }
     setisNextClicked(true);
   }
 
@@ -125,19 +136,12 @@ export default function HorizontalLabelPositionBelowStepper() {
                 </Typography>
 
                 <div>
-                  {/* <Button
-                    disabled={activeStep === 0}
-                    onClick={handleBack}
-                    className={classes.backButton}
-                  >
-                    Back
-                  </Button> */}
                   <Button
                     variant="contained"
                     color="primary"
                     onClick={handleNext}
                   >
-                    {activeStep === steps.length - 1 ? "Finish" : "Next"}
+                    {activeStep === steps.length - 1 ? "Finish and Pay" : "Next"}
                   </Button>
                 </div>
               </section>

@@ -1,8 +1,7 @@
 import React from 'react';
 import { withStyles } from '@material-ui/core/styles';
 import Typography from '../component/Typography';
-import Button from '../component/Button';
-
+import { connect } from "react-redux";
 const styles = theme => ({
     container:{
         border: '2px solid red',
@@ -12,6 +11,11 @@ const styles = theme => ({
 })
 
 class Payment extends React.Component{
+
+    componentWillUnmount(){
+        console.log("payment page unmounted")
+    }
+
     render(){
         const { classes } = this.props;
         return(

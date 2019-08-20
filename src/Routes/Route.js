@@ -12,6 +12,7 @@ import Itinerary from '../Pages/Itinerary';
 import Profile from "../Pages/Profile";
 import BookingPage from "../Pages/BookingPage";
 import GalleryPage from '../Pages/GalleryPage';
+import Confirrmation from '../Pages/Confirmation';
 import EnsureLoggedInContainer from '../Routes/EnsureLoggedInContainer';
 
 export const  Router = () => {
@@ -23,6 +24,7 @@ export const  Router = () => {
       <Route path="/itinerary" component={Itinerary} />
       <Route path = "/gallery" component = {GalleryPage} />
       <Route path = "/searchPage" component = {SearchPage} />
+      <Route path = "/confirmation" component = {Confirrmation} />
 
       <Route component={EnsureLoggedInContainer}>
         <Route path="/booking" component={BookingPage}/>
