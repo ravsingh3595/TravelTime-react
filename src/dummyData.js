@@ -181,7 +181,7 @@ export const monthData = {
 }
 
 export const itineraryData = {
-  tripImage: "https://www.mountaintreksnepal.com/wp-content/uploads/2018/05/Everest-base-camp-luxury-trekking-1024x400.jpg",
+  tripImage: "https://www.imaginative-traveller.com/images/articles/blogs/vietnam-1024x300.jpg",
   tripName: "Tobermory",
   tripHighLight: "Valley of hikes",
   tripDescription: "Best Hikes in the Dolomites The Sesto Dolomites, Val Badia & Val Gardena Printable version of trip itinerary Dolomites Slide Show We are offering two versions of our popular Dolomites tours in 2019 and 2020. See a map of the areas covered by each of the two Dolomites tours being offered in 2019 and 2020. For a June/July trip, see the description for our “Best Hikes in the Dolomites (Summer)” hiking tour (featuring the spectacular Brenta Dolomites and the Pale di San Martino) at the height of wildflower season. Explore the trails and landscapes amidst the peaks whose jagged silhouettes inspired one writer to call the mountains, “flames frozen in stone.” Among the most visually stunning mountains anywhere, the Dolomites offer a superb network of trails"+

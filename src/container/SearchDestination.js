@@ -1,6 +1,7 @@
 import React, { Component }  from 'react';
 import Travel from '../assest/travel.jpg';
 
+import Link from '@material-ui/core/Link';
 class SearchDestination extends Component {
     state = {
       query: '',
@@ -11,6 +12,12 @@ class SearchDestination extends Component {
         query: event.target.value
       })
     }
+
+    // onSubmit(e){
+    //   e.preventDefault();
+      
+    //   // <Link href="/searchPage" variant="button" />
+    // }
    
     render() {
       return (
@@ -31,7 +38,7 @@ class SearchDestination extends Component {
               textAlign: 'center'}}>
              Travelling Made Easy
           </h1>
-        <form>
+        <form >
           <input
             style={{
                 height: "40px", 
@@ -40,6 +47,9 @@ class SearchDestination extends Component {
                 fontSize: "18px"}}
             placeholder="Search for..."
             value = {this.state.query}
+            // component={linkProps => (
+            //   <Link {...linkProps} href="/itinerary" variant="button" />
+            // )}
             // ref={input => this.search = input}
             onChange={this.handleInputChange}
           />

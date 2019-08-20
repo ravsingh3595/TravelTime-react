@@ -8,25 +8,26 @@ const ReviewCard = (props) => {
         <Paper
           style={{
             padding: "10px",
-            margin: "20px",
+            margin: "10px",
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
             justifyContent: "center",
-            width: "50%"
+            width: "60%",
           }}
         >
-          <Typography variant="h3" gutterBottom>
+          <Typography variant="h4" gutterBottom style={{color : "#5BA16F"}}>
             {props.name}
           </Typography>
-          <Typography variant="h4" gutterBottom>
-            {props.reviewText}
+          <Typography variant="subtitle1" gutterBottom style={{fontStyle : "italic"}}>
+            "{props.reviewText}"
           </Typography>
           <StarRatings
             rating={props.ratings}
-            starRatedColor="red"
+            starRatedColor="#5BA16F"
             numberOfStars={5}
             name="rating"
+            starDimension="20px"
           />
         </Paper>
     )

@@ -6,7 +6,7 @@ import Tabs from '@material-ui/core/Tabs';
 import Tab from '@material-ui/core/Tab';
 import Typography from '@material-ui/core/Typography';
 import Box from '@material-ui/core/Box';
-
+import Reviews from "../component/Reviews";
 //icons
 import RateReview from '@material-ui/icons/RateReview';
 import FavoriteIcon from '@material-ui/icons/Favorite';
@@ -18,10 +18,30 @@ import ThumbUp from '@material-ui/icons/ThumbUp';
 //Tab components
 import PersonalDetails from "../component/PersonalDetails";
 
+import fire from "../Firebase/Firebase";
+import ReviewCard from "../component/ReviewCard"
+import { profileData } from "../dummyData";
+
+var data;
+
+var ref = fire.database().ref("reviews");
 
 
 function TabPanel(props) {
   const { children, value, index, ...other } = props;
+
+  React.useEffect(() => {
+    ref.on("value", function(snapshot) {
+      // console.log(snapshot)
+      snapshot.forEach(function(childSnapshot) {
+      var allData = childSnapshot.val();
+      data = {
+        ...data, allData
+      }
+      console.log(data);
+      });
+    });
+  });
 
   return (
     <Typography
@@ -85,31 +105,21 @@ export default function ScrollableTabsButtonForce() {
           className={classes.tabContainer}
         >
           <Tab label="Personal Details" icon={<PersonPinIcon />} {...a11yProps(0)} />
-          <Tab label="Blogs" icon={<InsertComment />} {...a11yProps(3)} />
-          <Tab label="Reviews" icon={<RateReview />} {...a11yProps(4)} />
+          {/* <Tab label="Blogs" icon={<InsertComment />} {...a11yProps(3)} /> */}
+          <Tab label="Reviews" icon={<RateReview />} {...a11yProps(1)} />
         </Tabs>
       </AppBar>
       <TabPanel value={value} index={0}>
         <PersonalDetails/>
       </TabPanel>
-      <TabPanel value={value} index={1}>
+      {/* <TabPanel value={value} index={1}>
         Item Two
+      </TabPanel> */}
+      <TabPanel value={value} index={1}>
+        <Reviews/>
+        
       </TabPanel>
-      <TabPanel value={value} index={2}>
-        Item Three
-      </TabPanel>
-      <TabPanel value={value} index={3}>
-        Item Four
-      </TabPanel>
-      <TabPanel value={value} index={4}>
-        Item Five
-      </TabPanel>
-      <TabPanel value={value} index={5}>
-        Item Six
-      </TabPanel>
-      <TabPanel value={value} index={6}>
-        Item Seven
-      </TabPanel>
+      
     </div>
   );
 }

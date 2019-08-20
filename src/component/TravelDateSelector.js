@@ -26,7 +26,7 @@ export default function TravelDateSelector(props) {
         id="date"
         label="From"
         type="date"
-        defaultValue="2017-05-24"
+        defaultValue="2019-08-20"
         className={classes.textField}
         InputLabelProps={{
           shrink: true
@@ -39,7 +39,7 @@ export default function TravelDateSelector(props) {
         id="date"
         label="To"
         type="date"
-        defaultValue="2017-05-24"
+        defaultValue="2019-08-20"
         className={classes.textField}
         InputLabelProps={{
           shrink: true
