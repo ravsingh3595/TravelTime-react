@@ -83,7 +83,7 @@ componentDidUpdate(prevProps) {
                 {profileData.firstname + " " + profileData.lastname}
               </Typography>
               <Typography variant='h6'>
-                Location
+                Toronto
               </Typography>
             </div>
           </Paper>
@@ -96,19 +96,6 @@ componentDidUpdate(prevProps) {
         </div>
        
 
-{/* 
-            {profileData.reviews.map( review => {
-                return(
-                    <ReviewCard name = {review.name} 
-            reviewText = {review.reviewText} 
-            ratings = {review.ratings}></ReviewCard>
-                )
-            
-            })} */}
-
-    
-
-       
       </div>
     );
   }

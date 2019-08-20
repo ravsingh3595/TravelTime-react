@@ -37,8 +37,6 @@ function TextFieldComponent(props) {
     name,
     label,
     type,
-    placeholder,
-    defaultValue,
     value,
     autoComplete,
     onChange,
@@ -60,9 +58,9 @@ function TextFieldComponent(props) {
           notchedOutline: classes.notchedOutline
         }
       }}
-      defaultValue={defaultValue}
-      placeholder={placeholder}
-      value= {value}
+      value={value}
+      multiline
+      rows = "4"
       id={id}
       name={name}
       label={label}

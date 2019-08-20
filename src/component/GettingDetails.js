@@ -40,7 +40,6 @@ class GettingDetails extends React.Component {
       bookingId: "",
     };
     this.onChange = this.onChange.bind(this);
-    this.saveDetails = this.saveDetails.bind(this);
     this.handleContactBlur = this.handleContactBlur.bind(this);
     this.handleEmailBlur = this.handleEmailBlur.bind(this);
   }
@@ -52,13 +51,6 @@ class GettingDetails extends React.Component {
   onChange(event) {
     console.log("heloo I'm in onchange");
     this.setState({ [event.target.name]: event.target.value });
-  }
-
-  saveDetails(event) {
-    this.setState({ submittedTravellers: this.submittedTravellers + 1 });
-    this.setState({ bookingId: shortid.generate() });
-    //ref.push(this.state);
-    //console.log(fire);
   }
 
   handleEmailBlur(e) {
@@ -100,31 +92,11 @@ class GettingDetails extends React.Component {
             <TravellerForm val={val} setFullName={this.props.setFullName} />
           );
         })}
+        <br/>
         <TravelDateSelector
           setFromDate={this.props.setFromDate}
           setToDate={this.props.setToDate}
         />
-
-
-        {/* <Button
-          type="submit"
-          variant="contained"
-          color="primary"
-          onClick={this.saveDetails}
-        >
-          {this.numberOfTravellers === this.submittedTravellers
-            ? "Press Confirm Information"
-            : "Next"}
-        </Button> */}
-
-        {/* <Button
-              disabled={numberOfTravellers === 0}
-              onClick={saveDetails}
-              className={classes.backButton}
-              >
-              Back
-              </Button>
-              */}
 
         <div />
       </section>
