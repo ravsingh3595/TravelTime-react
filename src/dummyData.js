@@ -4,14 +4,14 @@ const data = [
   {
     url:
       "https://images.unsplash.com/photo-1534081333815-ae5019106622?auto=format&fit=crop&w=400&q=80",
-    title: "Snorkeling",
+    title: "Killarney",
     width: "30%",
     author: "personUserName",
   },
   {
     url:
       "https://images.unsplash.com/photo-1531299204812-e6d44d9a185c?auto=format&fit=crop&w=400&q=80",
-    title: "Massage",
+    title: "Tobermory",
     width: "30%",
     author: "personUserName",
   },
@@ -180,86 +180,163 @@ export const monthData = {
   ]
 }
 
-export const itineraryData = {
-  tripImage: "https://www.imaginative-traveller.com/images/articles/blogs/vietnam-1024x300.jpg",
-  tripName: "Tobermory",
-  tripHighLight: "Valley of hikes",
-  tripDescription: "Best Hikes in the Dolomites The Sesto Dolomites, Val Badia & Val Gardena Printable version of trip itinerary Dolomites Slide Show We are offering two versions of our popular Dolomites tours in 2019 and 2020. See a map of the areas covered by each of the two Dolomites tours being offered in 2019 and 2020. For a June/July trip, see the description for our “Best Hikes in the Dolomites (Summer)” hiking tour (featuring the spectacular Brenta Dolomites and the Pale di San Martino) at the height of wildflower season. Explore the trails and landscapes amidst the peaks whose jagged silhouettes inspired one writer to call the mountains, “flames frozen in stone.” Among the most visually stunning mountains anywhere, the Dolomites offer a superb network of trails"+
-                    "—from broad, well-graded paths to challenging vie ferrate—that caters to hikers of all abilities. The first part of the trip centers on the eastern Dolomites where the needle-like spires and pinnacles of the range are at their finest."+
-                    "The second part focuses on the western portion of the range where extensive meadowlands, flower-filled villages, and soaring peaks make for a quintessential Dolomites adventure! The classic alpine landscape and the wide range of hiking choices make the "+
-                    "Dolomites one of our favorite hiking destinations! Revel in the glory of the Monti Pallidi (“Pale Mountains”) that legend says wear a cloak spun from moonbeams! In 2009, nine areas in the Dolomites were designated a UNESCO World Heritage Site.",
-  numberOfDays: "3",
-  weatherMin: "10",
-  weatherMax: "20",
-  dayWise: [
-    {
-      image: "https://mountainhikingholidays.com/wp-content/uploads/2016/12/misurina_853.jpg",
-      destination: " Galleria Anticima",
-      description: "After breakfast, you’ll travel by vehicle to the Cinque Torri seggiovia (“chairlift”) that will whisk you to the meadows adjacent to the impressive limestone towers of the Cinque Torri (“Five Towers”). Relax at the mountain rifugio way up the precipitous walls of the towers",
-      touristAttraction: "touristAttraction",
-      bestThing: "bestThing",
-      foodSpeciality: "foodSpeciality",
-      activity: "activity",
-      dayDelight: "",
-      lat: "",
-      long: "",
-      flow: "left"
-    },
-    {
-      image: "https://mountainhikingholidays.com/wp-content/uploads/2016/12/ciadin_dei_tocci_853.jpg",
-      destination: "Rifugio Boe ",
-      description: "Hike into the high, other-worldly landscape of the Sella massif. Ride a cable car to the Belvedere ridge high above the Fassa Valley for stunning “front and center” views of glacier-clad Marmolada, a peak known as the “Queen of the Dolomites.",
-      touristAttraction: "touristAttraction",
-      bestThing: "bestThing",
-      foodSpeciality: "foodSpeciality",
-      activity: "activity",
-      dayDelight: "",
-      lat: "",
-      long: "",
-      flow: "right"
-      
-    },
-    {
-      image: "https://mountainhikingholidays.com/wp-content/uploads/2016/12/alpe_di_siusi_2009_853_1.jpg",
-      destination: "Peaks of the Sassolungo",
-      description: "From Ortisei, ascend into the mountains via the Seceda cable car. Hike among the craggy peaks of the mountain group called the Odle Geisler (odle means “needles” in Ladin), and amble through the open meadowlands of the Alpe di Cisles and Mastle Alm",
-      touristAttraction: "touristAttraction",
-      bestThing: "bestThing",
-      foodSpeciality: "foodSpeciality",
-      activity: "activity",
-      dayDelight: "",
-      lat: "",
-      long: "",
-      flow: "left"
-    },
-    {
-      image: "https://mountainhikingholidays.com/wp-content/uploads/2016/12/rifugio_boe_853.jpg",
-      destination: "Rifugio Bo",
-      description: "Hike into the high, other-worldly landscape of the Sella massif. Ride a cable car to the Belvedere ridge high above the Fassa Valley for stunning “front and center” views of glacier-clad Marmolada, a peak known as the “Queen of the Dolomites.",
-      touristAttraction: "touristAttraction",
-      bestThing: "bestThing",
-      foodSpeciality: "foodSpeciality",
-      activity: "activity",
-      dayDelight: "",
-      lat: "",
-      long: "",
-      flow: "right"
-    },
-    {
-      image: "https://mountainhikingholidays.com/wp-content/uploads/2016/12/seceda_hikers_853.jpg",
-      destination: " Galleria Anticim",
-      description: "After breakfast, you’ll travel by vehicle to the Cinque Torri seggiovia (“chairlift”) that will whisk you to the meadows adjacent to the impressive limestone towers of the Cinque Torri (“Five Towers”). Relax at the mountain rifugio way up the precipitous walls of the towers",
-      touristAttraction: "touristAttraction",
-      bestThing: "bestThing",
-      foodSpeciality: "foodSpeciality",
-      activity: "activity",
-      dayDelight: "",
-      lat: "",
-      long: "",
-      flow: "left"
-    },
-  ]
-}
+// export const itineraryDsta = [
+//   tripId: "Killarney"
+// ]
+
+
+export const itineraryData = [
+  {
+    tripID: "Killarney",
+    tripImage: "https://www.planetware.com/photos-large/CDN/ontario-killarney-george-lake-campground-section-a.jpg",
+    tripName: "Killarney",
+    tripHighLight: "Wilderness",
+    tripDescription: "This iconic 645 square kilometre wilderness landscape showcases the wild Georgian Bay Coast of pink granite; the La Cloche Mountains’ white quartzite ridges and over 50 exceptionally clear, sapphire lakes set among Jack Pine hills."+
+              "The area has long captivated artists including The Group of Seven’s A.Y. Jackson, Franklin Carmichael and A.J. Casson, so much so, that they persuaded the Ontario government to make it a park."+
+              "Extensive backcountry canoeing and sea kayaking experiences.Outstanding hiking including the 80 km, looped, La Cloche-Silhouette Trail, as well as cross-country skiing and snowshoeing in winter. George Lake campground, with access to beaches, trails, and canoeing."+
+              "Historic Village of Killarney, founded in 1820 as a fur trading post on Georgian Bay, 10 km from park and home of the famous Herbert Fisheries fish and chips.",
+    numberOfDays: "4",
+    weatherMin: "15",
+    weatherMax: "21",
+    routeImage: "https://cdn-assets.alltrails.com/static-map/production/at-map/13270596/trail-canada-ontario-granite-ridge-trail-at-map-13270596-1534113366-414x200-1.png",
+    dayWise: [
+      {
+        image: "https://rstorage.filemobile.com/storage/20712768/1085",
+        destination: " Cranberry Bog Trail 4 km (2.5 hours)",
+        description: "Bogs, marshes and swamps are home to Sundew, Leatherleaf, Pitcher Plant and Cranberry. Beaver feed piles can be seen along the way. Many birds frequent this trail’s habitats and Blanding’s Turtles make an occasional appearance in Cranberry Bog.",
+        touristAttraction: "Glaciation—smooth rock surfaces",
+        bestThing: "Blanding’s Turtles",
+        foodSpeciality: "NA",
+        activity: "Hiking",
+        dayDelight: "",
+        lat: "46.0184",
+        long: "81.3964",
+        flow: "left"
+      },
+      {
+        image: "https://i.pinimg.com/originals/5b/83/89/5b838906184f506ab4af8e687a380d02.jpg",
+        destination: "The Crack 6 km (4 hour)",
+        description: "The view from the top of Killarney Ridge is absolutely stunning. The immense white cliffs of the La Cloche Mountains surround you as you ascend through the cascade of huge tumbled boulders of what is known as 'The Crack'.",
+        touristAttraction: "Panoramic Vistas",
+        bestThing: "White Cliffs of the La Cloche Mountains",
+        foodSpeciality: "NA",
+        activity: "Hiking",
+        dayDelight: "",
+        lat: "46.0437",
+        long: "81.3236",
+        flow: "right"
+        
+      },
+      {
+        image: "https://i.redd.it/o8aijsa08l7z.jpg",
+        destination: "Peaks of the Sassolungo",
+        description: "From Ortisei, ascend into the mountains via the Seceda cable car. Hike among the craggy peaks of the mountain group called the Odle Geisler (odle means “needles” in Ladin), and amble through the open meadowlands of the Alpe di Cisles and Mastle Alm",
+        touristAttraction: "touristAttraction",
+        bestThing: "bestThing",
+        foodSpeciality: "foodSpeciality",
+        activity: "activity",
+        dayDelight: "",
+        lat: "",
+        long: "",
+        flow: "left"
+      },
+      {
+        image: "https://www.planetware.com/photos-large/CDN/ontario-killarney-camping-section-d-campsite.jpg",
+        destination: "Rifugio Bo",
+        description: "Hike into the high, other-worldly landscape of the Sella massif. Ride a cable car to the Belvedere ridge high above the Fassa Valley for stunning “front and center” views of glacier-clad Marmolada, a peak known as the “Queen of the Dolomites.",
+        touristAttraction: "touristAttraction",
+        bestThing: "bestThing",
+        foodSpeciality: "foodSpeciality",
+        activity: "activity",
+        dayDelight: "",
+        lat: "",
+        long: "",
+        flow: "right"
+      },
+    ]
+  },
+  {
+      tripID: "Tobermory",
+      tripImage: "https://www.imaginative-traveller.com/images/articles/blogs/vietnam-1024x300.jpg",
+      tripName: "Tobermory",
+      tripHighLight: "Valley of hikes",
+      tripDescription: "Best Hikes in the Dolomites The Sesto Dolomites, Val Badia & Val Gardena Printable version of trip itinerary Dolomites Slide Show We are offering two versions of our popular Dolomites tours in 2019 and 2020. See a map of the areas covered by each of the two Dolomites tours being offered in 2019 and 2020. For a June/July trip, see the description for our “Best Hikes in the Dolomites (Summer)” hiking tour (featuring the spectacular Brenta Dolomites and the Pale di San Martino) at the height of wildflower season. Explore the trails and landscapes amidst the peaks whose jagged silhouettes inspired one writer to call the mountains, “flames frozen in stone.” Among the most visually stunning mountains anywhere, the Dolomites offer a superb network of trails"+
+                        "—from broad, well-graded paths to challenging vie ferrate—that caters to hikers of all abilities. The first part of the trip centers on the eastern Dolomites where the needle-like spires and pinnacles of the range are at their finest."+
+                        "The second part focuses on the western portion of the range where extensive meadowlands, flower-filled villages, and soaring peaks make for a quintessential Dolomites adventure! The classic alpine landscape and the wide range of hiking choices make the "+
+                        "Dolomites one of our favorite hiking destinations! Revel in the glory of the Monti Pallidi (“Pale Mountains”) that legend says wear a cloak spun from moonbeams! In 2009, nine areas in the Dolomites were designated a UNESCO World Heritage Site.",
+      numberOfDays: "3",
+      weatherMin: "10",
+      weatherMax: "20",
+      dayWise: [
+        {
+          image: "https://mountainhikingholidays.com/wp-content/uploads/2016/12/misurina_853.jpg",
+          destination: " Galleria Anticima",
+          description: "After breakfast, you’ll travel by vehicle to the Cinque Torri seggiovia (“chairlift”) that will whisk you to the meadows adjacent to the impressive limestone towers of the Cinque Torri (“Five Towers”). Relax at the mountain rifugio way up the precipitous walls of the towers",
+          touristAttraction: "touristAttraction",
+          bestThing: "bestThing",
+          foodSpeciality: "foodSpeciality",
+          activity: "activity",
+          dayDelight: "",
+          lat: "",
+          long: "",
+          flow: "left"
+        },
+        {
+          image: "https://mountainhikingholidays.com/wp-content/uploads/2016/12/ciadin_dei_tocci_853.jpg",
+          destination: "Rifugio Boe ",
+          description: "Hike into the high, other-worldly landscape of the Sella massif. Ride a cable car to the Belvedere ridge high above the Fassa Valley for stunning “front and center” views of glacier-clad Marmolada, a peak known as the “Queen of the Dolomites.",
+          touristAttraction: "touristAttraction",
+          bestThing: "bestThing",
+          foodSpeciality: "foodSpeciality",
+          activity: "activity",
+          dayDelight: "",
+          lat: "",
+          long: "",
+          flow: "right"
+          
+        },
+        {
+          image: "https://mountainhikingholidays.com/wp-content/uploads/2016/12/alpe_di_siusi_2009_853_1.jpg",
+          destination: "Peaks of the Sassolungo",
+          description: "From Ortisei, ascend into the mountains via the Seceda cable car. Hike among the craggy peaks of the mountain group called the Odle Geisler (odle means “needles” in Ladin), and amble through the open meadowlands of the Alpe di Cisles and Mastle Alm",
+          touristAttraction: "touristAttraction",
+          bestThing: "bestThing",
+          foodSpeciality: "foodSpeciality",
+          activity: "activity",
+          dayDelight: "",
+          lat: "",
+          long: "",
+          flow: "left"
+        },
+        {
+          image: "https://mountainhikingholidays.com/wp-content/uploads/2016/12/rifugio_boe_853.jpg",
+          destination: "Rifugio Bo",
+          description: "Hike into the high, other-worldly landscape of the Sella massif. Ride a cable car to the Belvedere ridge high above the Fassa Valley for stunning “front and center” views of glacier-clad Marmolada, a peak known as the “Queen of the Dolomites.",
+          touristAttraction: "touristAttraction",
+          bestThing: "bestThing",
+          foodSpeciality: "foodSpeciality",
+          activity: "activity",
+          dayDelight: "",
+          lat: "",
+          long: "",
+          flow: "right"
+        },
+        {
+          image: "https://mountainhikingholidays.com/wp-content/uploads/2016/12/seceda_hikers_853.jpg",
+          destination: " Galleria Anticim",
+          description: "After breakfast, you’ll travel by vehicle to the Cinque Torri seggiovia (“chairlift”) that will whisk you to the meadows adjacent to the impressive limestone towers of the Cinque Torri (“Five Towers”). Relax at the mountain rifugio way up the precipitous walls of the towers",
+          touristAttraction: "touristAttraction",
+          bestThing: "bestThing",
+          foodSpeciality: "foodSpeciality",
+          activity: "activity",
+          dayDelight: "",
+          lat: "",
+          long: "",
+          flow: "left"
+        },
+      ]
+    }
+]
 
 export const searchData = [
   {

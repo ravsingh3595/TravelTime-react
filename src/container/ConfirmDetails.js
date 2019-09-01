@@ -20,6 +20,20 @@ const useStyles = makeStyles(theme => ({
 function ConfirmDetails(props) {
   const classes = useStyles();
   
+  let data;
+
+  
+    if (props.bookingInfo.travellers == null) {
+      data =  <Typography variant="subtitle1" component="h6"><p>Please select the number of travellers</p></Typography>
+    }
+    else{
+      data = <Typography variant="subtitle1" component="h6">{Object.keys(props.bookingInfo.travellers).map( (val) =>{
+                return (<p>Traveller Name {val} - {props.bookingInfo.travellers[val]}</p>)})}
+              </Typography>
+    }
+
+  
+  
 
   return (
     <div>
@@ -49,13 +63,8 @@ function ConfirmDetails(props) {
           Journey End date : {props.bookingInfo.toDate}
         </Typography>
 
-        <Typography variant="subtitle1" component="h6">
-        {Object.keys(props.bookingInfo.travellers).map( (val) =>{
-          return (
-              <p>Traveller Name {val} - {props.bookingInfo.travellers[val]}</p>
-          )
-          })}
-        </Typography>
+        {data}
+
         <br />
         <br />
       </div>

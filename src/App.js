@@ -41,7 +41,7 @@ class App extends React.Component {
       <MuiThemeProvider theme={rawTheme}>
         <React.Fragment>
           {this.state.email ? (
-            <Home isUserLoggedIn={isUserLoggedIn} />
+            <Home history = {this.props.history} isUserLoggedIn={isUserLoggedIn} />
           ) : (
             <LoginPage history={this.props.history} />
           )}
