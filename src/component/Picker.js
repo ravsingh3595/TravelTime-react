@@ -23,12 +23,18 @@ const useStyles = makeStyles(theme => ({
 
 function Picker(props) {
   const classes = useStyles();
-  const [travellers, setTravellers] = React.useState("");
+  const [travellers, setTravellers] = React.useState(1);
   const [open, setOpen] = React.useState(false);
 
   function handleChange(event) {
-    setTravellers(event.target.value);
-    props.setUpNumberOfTravellers(event.target.value);
+    if(event.target.value == null | event.target.value == undefined){
+      setTravellers(1);
+      props.setUpNumberOfTravellers(1);
+    }else{
+      setTravellers(event.target.value);
+      props.setUpNumberOfTravellers(event.target.value);
+    }
+    
   }
 
   function handleClose() {
@@ -70,11 +76,11 @@ function Picker(props) {
           <MenuItem value={8}>8</MenuItem>
           <MenuItem value={9}>9</MenuItem>
           <MenuItem
-            component={linkProps => (
-              <Link {...linkProps} href="/" variant="button" />
-            )}
+            // component={linkProps => (
+            //   <Link {...linkProps} href="/" variant="button" />
+            // )}
             onClick={contactUs}
-            value=""
+            value="0"
           >
             <em>Other</em>
           </MenuItem>

@@ -11,11 +11,17 @@ class Itinerary extends Component {
     }
 
     render(){
+      var { tripID } = this.props.location;
+      if(tripID == undefined | tripID == null){
+        console.log(tripID)
+        tripID = "Tobermory"
+      }
         return(
+          
           <div>
             <AppBar/>
-            <ItineraryHeader/>
-            <ItineraryDescription/>
+            <ItineraryHeader tripID={tripID}/>
+            <ItineraryDescription tripID={tripID}/>
           </div>
         );
     }

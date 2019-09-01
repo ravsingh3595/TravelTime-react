@@ -26,7 +26,6 @@ class Home extends React.Component{
     }
 
   render(){
-    console.log(this.state.isUserLoggedIn)
     const {isUserLoggedIn} = this.props;
     // this.setState({isUserLoggedIn: isUserLoggedIn})
     return(
@@ -36,7 +35,7 @@ class Home extends React.Component{
       <FlashMessageList/>
       <SearchDestination/>
       <Values/>
-      <TopChoices/>
+      <TopChoices history = {this.props.history}/>
       <Steps/>
       <Help/>
       <Footer/>

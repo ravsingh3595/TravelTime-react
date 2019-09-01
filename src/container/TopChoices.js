@@ -8,6 +8,8 @@ import Typography from '../component/Typography';
 import DummyData from '../dummyData';
 import Divider from '@material-ui/core/Divider';
 import Link from '@material-ui/core/Link';
+// import { Link } from "react-router-dom";
+
 
 const styles = theme => ({
   root: {
@@ -94,14 +96,17 @@ const styles = theme => ({
 
 
 function TopChoices(props) {
-  const { classes } = props;
 
-  // function onClick(event){
-  //   // event.preventDefault();
-  //   console.log("Clicked " + event.title);
-    
-  // }
+  const { classes } = props;
   
+  
+  function onClick(event){
+    // event.preventDefault();
+    props.history.push({
+      pathname: "/itinerary",
+      tripID: event.title
+    })
+  }
 
   return (
     <LayoutBody className={classes.root} component="section" width="xlarge" >
@@ -114,16 +119,19 @@ function TopChoices(props) {
       <Divider variant="fullWidth"/>
       <div className={classes.images}>
         {DummyData.map(image => (
+          <>
+          
+          
           <Button
             key={image.title}
             className={classes.imageWrapper}
             style={{
               width: image.width,
             }}
-            // onClick={() => onClick(image)}
-            component={linkProps => (
-              <Link {...linkProps} href="/itinerary" variant="button" />
-            )}
+            onClick={() => onClick(image)}
+            // component={linkProps => (
+            //   <Link {...linkProps} href="/itinerary" variant="button" data = {linkProps} />
+            // )}
           >
             <div
               className={classes.imageSrc}
@@ -145,6 +153,7 @@ function TopChoices(props) {
             </div>
             
           </Button>
+          </>
         ))}
       </div>
     </LayoutBody>

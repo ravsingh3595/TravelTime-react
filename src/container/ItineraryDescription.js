@@ -193,6 +193,7 @@ class ItineraryDescription extends Component {
     }
     render(){
       const { classes } = this.props;
+      const filterData = itineraryData.filter(d=>d["tripID"] == this.props.tripID)
         return(
           <div>
             <section className={classes.root}>
@@ -209,7 +210,7 @@ class ItineraryDescription extends Component {
                 </section>
 
                 <div className={classes.day}>
-                    {itineraryData.dayWise.map(dayWiseData => (
+                    {filterData[0].dayWise.map(dayWiseData => (
                         <React.Fragment  key = {dayWiseData.destination}>
                             <div className= {classnames(classes.tripImage, dayWiseData.flow === "left" ? classes.left : classes.right)}>
                                 <img src={dayWiseData.image} alt={dayWiseData.destination} style={{height:"100%"}}/>
@@ -287,7 +288,7 @@ class ItineraryDescription extends Component {
                         Find your destination on Map
                     </Typography>
                     <div className="mapContainer">
-                        <MapContainer />    
+                        {/* <MapContainer />     */}
                     </div> 
                 </section>
                 {/* <section className={classes.item}>Reviews/blog</section>
