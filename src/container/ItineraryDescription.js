@@ -43,20 +43,22 @@ const styles = theme => ({
         alignItems: 'center',
         // padding: '20px 10px 10px 10px',
         boxShadow: '0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)',
-        width: '90%'
-    //   border: '2px solid #ffffff'           //Should be removed at the end
+        width: '75%',
+        [theme.breakpoints.down('sm')]:{
+            width: '60%',
+        },
     },
     title: {
         
-        margin: '100px 250px 10px 250px',
+        margin: '80px 120px 8px 120px',
         color: "#ffffff",
         fontSize: 68,
         [theme.breakpoints.down('md')]:{
-            margin: '80px 120px 8px 120px',
+            margin: '50px 100px 5px 100px',
             fontSize: 48
         },
         [theme.breakpoints.down('sm')]:{
-            margin: '50px 100px 5px 100px',
+            margin: '30px 80px 3px 80px',
             fontSize: 32
         },
     },
@@ -80,13 +82,15 @@ const styles = theme => ({
     },
     day:{
         display: 'block',
-        width: '90%',
+        width: '75%',
         color: '#fff',
         boxShadow: '0 10px 10px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19)',
         [theme.breakpoints.down('sm')]:{
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
+            boxShadow: 'none',
+
         },
         
     },
@@ -95,8 +99,9 @@ const styles = theme => ({
         height: '400px',
         overflow: 'hidden',
         [theme.breakpoints.down('sm')]:{
-            width: '60%',
+            width: '80%',
             flex: '1 100%',
+            justifyContent: 'center',
         },
         // borderRadius: '10px',
     },
@@ -107,7 +112,7 @@ const styles = theme => ({
         width: '50%',
         height: '400px',
         [theme.breakpoints.down('sm')]:{
-            width: '60%',
+            width: '80%',
             flex: '1 100%',
         },
         // borderRadius: '10px',
@@ -129,9 +134,10 @@ const styles = theme => ({
         },
     },
     infoBlock:{
-        padding: '3em 2.5em 2.5em 2.5em',
+        padding: '1em 2.5em 2.5em 2.5em',
         [theme.breakpoints.down('md')]:{
             padding: '2.0em 1.5em 1.5em 1.5em',
+            fontSize: 14
         },
     },
     ul:{
@@ -143,6 +149,7 @@ const styles = theme => ({
         justifyContent: 'center',
         [theme.breakpoints.down('sm')]:{
             padding: '1.5em 0.5em 1.5em 0.5em',
+            
         }
 
     },
@@ -155,11 +162,15 @@ const styles = theme => ({
         position: 'relative',
         padding: '1em 1em 1em 2em',
         [theme.breakpoints.down('md')]:{
-            padding: '0.5em 0em 0.5em 0.5em',
-        }
+            padding: '1em 0em 0.5em 0.5em',
+            fontSize: 14
+        },
     },
     icon:{
         flex: 1, 
+        [theme.breakpoints.down('sm')]:{
+            size: 20,
+        }
     }, 
     feature:{
         flex: 4
@@ -172,14 +183,14 @@ const styles = theme => ({
     itemHeading:{
         margin: '80px 200px 0px 200px',
         color: "#ffffff",
-        fontSize: 48,
+        fontSize: 46,
         [theme.breakpoints.down('md')]:{
             margin: '50px 100px 0px 100px',
             fontSize: 36
         },
         [theme.breakpoints.down('sm')]:{
             margin: '30px 70px 0px 70px',
-            fontSize: 36
+            fontSize: 32
         },
 
     }
@@ -190,10 +201,20 @@ class ItineraryDescription extends Component {
         super(props);
         this.state = {
         }
+
+        
     }
+
+    
     render(){
       const { classes } = this.props;
       const filterData = itineraryData.filter(d=>d["tripID"] == this.props.tripID)
+
+      
+      
+      console.log("Sizee", window.innerHeight , window.innerWidth)
+
+
         return(
           <div>
             <section className={classes.root}>
@@ -276,17 +297,23 @@ class ItineraryDescription extends Component {
                 </div>
                 
                 <section className={classes.item}>
-                    <Typography variant="h3" className={classes.itemHeading}>
-                        Some Pictures by the travellers
-                    </Typography>
-                    <div style={{padding: '10px 20px 10px 30px', overflow:'hidden',}}>
-                        <SingleLineGridList/>
+                        <Typography variant="h3" className={classes.itemHeading}>
+                            Actual user experience
+                        </Typography>
+                        <Typography variant="h6" style={{color: "#fff"}}>
+                            Scroll right for priview
+                        </Typography>
+                        
+                    <div style={{overflow: "hidden !Important"}}>
+                        <div style={{padding: '10px 20px 10px 20px', overflow:'hidden',}}>
+                            <SingleLineGridList/>
+                        </div>
                     </div>
                 </section>
                 <section className={classes.item}>
-                    <Typography variant="h5" className={classes.itemHeading}>
-                        Find your destination on Map
-                    </Typography>
+                        <Typography variant="h5" className={classes.itemHeading}>
+                            Check destination on Map
+                        </Typography>
                     <div className="mapContainer">
                         {/* <MapContainer />     */}
                     </div> 

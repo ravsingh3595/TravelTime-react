@@ -112,14 +112,14 @@ class Confirmation extends React.Component {
                 Booking Status : Confirmed
               </Typography>
               <Typography variant="subtitle1" component="h6">
-                Destination : Tobermory
+                Destination : 
               </Typography>
               <Typography variant="subtitle1" component="h6">
-                Number of Travellers : 2
+                Number of Travellers : 
               </Typography>
 
               <Typography variant="subtitle1" component="h6">
-                Confirmation Email : ravneets47@gmail.com
+                Confirmation Email : 
               </Typography>
 
               <Typography variant="subtitle1" component="h6">
