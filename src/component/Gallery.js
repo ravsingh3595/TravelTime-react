@@ -18,7 +18,7 @@ const useStyles = makeStyles(theme => ({
   },
   gridList: {
     flexWrap: 'nowrap',
-    height: 250,
+    height: 200,
     // Promote the list into his own layer on Chrome. This cost memory but helps keeping high FPS.
     transform: 'translateZ(0)',
   },
@@ -39,7 +39,7 @@ export default function SingleLineGridList() {
       <GridList 
         component={linkProps => (<Link {...linkProps} href="/gallery" variant="button" /> )}
         className={classes.gridList} 
-        cols={3} 
+        cols={'auto'} 
         spacing={4} 
         cellHeight={"auto"}>
         {data.map(tile => (

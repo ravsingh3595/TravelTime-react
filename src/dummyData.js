@@ -202,9 +202,9 @@ export const itineraryData = [
     dayWise: [
       {
         image: "https://rstorage.filemobile.com/storage/20712768/1085",
-        destination: " Cranberry Bog Trail 4 km (2.5 hours)",
-        description: "Bogs, marshes and swamps are home to Sundew, Leatherleaf, Pitcher Plant and Cranberry. Beaver feed piles can be seen along the way. Many birds frequent this trail’s habitats and Blanding’s Turtles make an occasional appearance in Cranberry Bog.",
-        touristAttraction: "Glaciation—smooth rock surfaces",
+        destination: " Cranberry Bog Trail",
+        description: "Bogs, marshes and swamps are home to Sundew and Cranberry. Many birds frequent this trail’s habitats and Blanding’s Turtles make an occasional appearance in Cranberry Bog.",
+        touristAttraction: "Glaciation—smooth",
         bestThing: "Blanding’s Turtles",
         foodSpeciality: "NA",
         activity: "Hiking",
@@ -215,10 +215,10 @@ export const itineraryData = [
       },
       {
         image: "https://i.pinimg.com/originals/5b/83/89/5b838906184f506ab4af8e687a380d02.jpg",
-        destination: "The Crack 6 km (4 hour)",
-        description: "The view from the top of Killarney Ridge is absolutely stunning. The immense white cliffs of the La Cloche Mountains surround you as you ascend through the cascade of huge tumbled boulders of what is known as 'The Crack'.",
+        destination: "The Crack Trail",
+        description: "The view from the top of Killarney Ridge is absolutely stunning. The immense white cliffs of the La Cloche Mountains surround you through the cascade of huge tumbled boulders is known as 'The Crack'.",
         touristAttraction: "Panoramic Vistas",
-        bestThing: "White Cliffs of the La Cloche Mountains",
+        bestThing: "White Cliffs ",
         foodSpeciality: "NA",
         activity: "Hiking",
         dayDelight: "",
@@ -243,7 +243,7 @@ export const itineraryData = [
       {
         image: "https://www.planetware.com/photos-large/CDN/ontario-killarney-camping-section-d-campsite.jpg",
         destination: "Rifugio Bo",
-        description: "Hike into the high, other-worldly landscape of the Sella massif. Ride a cable car to the Belvedere ridge high above the Fassa Valley for stunning “front and center” views of glacier-clad Marmolada, a peak known as the “Queen of the Dolomites.",
+        description: "Hike into the high, other-worldly landscape of the Sella massif. Ride a cable car to the Belvedere ridge high above the Fassa Valley for stunning “front and center”, a peak known as the “Queen of the Dolomites.",
         touristAttraction: "touristAttraction",
         bestThing: "bestThing",
         foodSpeciality: "foodSpeciality",
@@ -264,7 +264,7 @@ export const itineraryData = [
                         "—from broad, well-graded paths to challenging vie ferrate—that caters to hikers of all abilities. The first part of the trip centers on the eastern Dolomites where the needle-like spires and pinnacles of the range are at their finest."+
                         "The second part focuses on the western portion of the range where extensive meadowlands, flower-filled villages, and soaring peaks make for a quintessential Dolomites adventure! The classic alpine landscape and the wide range of hiking choices make the "+
                         "Dolomites one of our favorite hiking destinations! Revel in the glory of the Monti Pallidi (“Pale Mountains”) that legend says wear a cloak spun from moonbeams! In 2009, nine areas in the Dolomites were designated a UNESCO World Heritage Site.",
-      numberOfDays: "3",
+      numberOfDays: "5",
       weatherMin: "10",
       weatherMax: "20",
       dayWise: [
