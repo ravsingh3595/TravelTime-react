@@ -39,11 +39,12 @@ export default function SingleLineGridList() {
       <GridList 
         component={linkProps => (<Link {...linkProps} href="/gallery" variant="button" /> )}
         className={classes.gridList} 
-        cols={'auto'} 
+        // cols={'window.innerWidth > 1000 ? 2.5 : '1}
+        cols={'auto'}
         spacing={4} 
         cellHeight={"auto"}>
         {data.map(tile => (
-          <GridListTile key={tile.title}>
+          <GridListTile key={tile.title} style={{}}>
             <img src={tile.url} alt={tile.title} height='100%'/>
             <GridListTileBar
               title={tile.title}
