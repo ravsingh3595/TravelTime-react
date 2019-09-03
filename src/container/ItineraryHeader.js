@@ -101,13 +101,17 @@ const styles = theme => ({
 
 class ItineraryHeader extends Component {
     constructor(props){
-        super(props);
+        super(props); 
         this.state = {
           image : Image
         }
 
-        
+       
       } 
+      componentDidMount() {
+        window.scrollTo(0, 0)
+      }
+      
       
     render(){
         const { classes } = this.props;
